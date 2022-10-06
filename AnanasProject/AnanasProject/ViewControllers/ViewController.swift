@@ -11,5 +11,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        createUI()
+    }
+    
+    private func createUI() {
+        view.backgroundColor = .systemYellow
     }
 }

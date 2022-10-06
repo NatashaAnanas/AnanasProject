@@ -13,6 +13,10 @@
 		4179EEDF28EDEBF8000D5121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4179EEDD28EDEBF8000D5121 /* Main.storyboard */; };
 		4179EEE128EDEBFC000D5121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4179EEE028EDEBFC000D5121 /* Assets.xcassets */; };
 		4179EEE428EDEBFC000D5121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4179EEE228EDEBFC000D5121 /* LaunchScreen.storyboard */; };
+		4179EEEE28EE0123000D5121 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEED28EE0123000D5121 /* BaseTabBarController.swift */; };
+		4179EEF028EE03F8000D5121 /* ViewControllerOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEEF28EE03F8000D5121 /* ViewControllerOne.swift */; };
+		4179EEF228EE0415000D5121 /* ViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEF128EE0415000D5121 /* ViewControllerTwo.swift */; };
+		4179EEF428EE042D000D5121 /* ViewControllerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEF328EE042D000D5121 /* ViewControllerThree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		4179EEE028EDEBFC000D5121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4179EEE328EDEBFC000D5121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4179EEE528EDEBFC000D5121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4179EEED28EE0123000D5121 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		4179EEEF28EE03F8000D5121 /* ViewControllerOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOne.swift; sourceTree = "<group>"; };
+		4179EEF128EE0415000D5121 /* ViewControllerTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTwo.swift; sourceTree = "<group>"; };
+		4179EEF328EE042D000D5121 /* ViewControllerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerThree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +66,25 @@
 			children = (
 				4179EED728EDEBF8000D5121 /* AppDelegate.swift */,
 				4179EED928EDEBF8000D5121 /* SceneDelegate.swift */,
-				4179EEDB28EDEBF8000D5121 /* ViewController.swift */,
+				4179EEEC28EE00EC000D5121 /* ViewControllers */,
 				4179EEDD28EDEBF8000D5121 /* Main.storyboard */,
 				4179EEE028EDEBFC000D5121 /* Assets.xcassets */,
 				4179EEE228EDEBFC000D5121 /* LaunchScreen.storyboard */,
 				4179EEE528EDEBFC000D5121 /* Info.plist */,
 			);
 			path = AnanasProject;
+			sourceTree = "<group>";
+		};
+		4179EEEC28EE00EC000D5121 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4179EEED28EE0123000D5121 /* BaseTabBarController.swift */,
+				4179EEDB28EDEBF8000D5121 /* ViewController.swift */,
+				4179EEEF28EE03F8000D5121 /* ViewControllerOne.swift */,
+				4179EEF128EE0415000D5121 /* ViewControllerTwo.swift */,
+				4179EEF328EE042D000D5121 /* ViewControllerThree.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,9 +180,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4179EEEE28EE0123000D5121 /* BaseTabBarController.swift in Sources */,
+				4179EEF028EE03F8000D5121 /* ViewControllerOne.swift in Sources */,
 				4179EEDC28EDEBF8000D5121 /* ViewController.swift in Sources */,
 				4179EED828EDEBF8000D5121 /* AppDelegate.swift in Sources */,
 				4179EEDA28EDEBF8000D5121 /* SceneDelegate.swift in Sources */,
+				4179EEF428EE042D000D5121 /* ViewControllerThree.swift in Sources */,
+				4179EEF228EE0415000D5121 /* ViewControllerTwo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
