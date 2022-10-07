@@ -24,7 +24,10 @@ class SearchViewController: UIViewController {
         static let macBlackImageName = "чехол"
         static let clockImageName = "4"
         static let macOrangeImageName = "2"
+        static let clean = "Очистить"
     }
+    
+    // MARK: - Visual Components
     
     private let historyLabel: UILabel = {
         let label = UILabel()
@@ -77,7 +80,7 @@ class SearchViewController: UIViewController {
     private var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
         search.obscuresBackgroundDuringPresentation = false
-        search.searchBar.placeholder = Constants.searchPlaceholder // тут текст
+        search.searchBar.placeholder = Constants.searchPlaceholder
         return search
     }()
     
@@ -91,31 +94,14 @@ class SearchViewController: UIViewController {
     
     private let cleanButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Очистить", for: .normal)
+        button.setTitle(Constants.clean, for: .normal)
         button.setTitleColor(UIColor.blue, for: .normal)
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.font = .systemFont(ofSize: 18)
         return button
     }()
     
-//    private let searchImage: UIImage = {
-//        let image = UIImage(systemName: Constants.searchImageName))
-//        return image
-//    }()
-    
-    private let lupaAirPodsImage: UIImageView = {
-            var imageView = UIImageView(frame: CGRect(
-                x: 23,
-                y: 585,
-                width: 18,
-                height: 18))
-        imageView.image = UIImage()
-            imageView.tintColor = .systemGray
-            imageView.contentMode = .scaleAspectFit
-            return imageView
-        }()
-    
-    private let blokViewOne: UIView = {
+    private let blokOneView: UIView = {
         let view = UIView()
         view.tag = 0
         view.backgroundColor = UIColor(red: 28.0/255, green: 28.0/255, blue: 30.0/255, alpha: 1.0)
@@ -124,7 +110,7 @@ class SearchViewController: UIViewController {
         return view
     }()
     
-    private let blokViewTwo: UIView = {
+    private let blokTwoView: UIView = {
         let view = UIView()
         view.tag = 1
         view.backgroundColor = UIColor(red: 28.0/255, green: 28.0/255, blue: 30.0/255, alpha: 1.0)
@@ -133,7 +119,7 @@ class SearchViewController: UIViewController {
         return view
     }()
     
-    private let blokViewThree: UIView = {
+    private let blokThreeView: UIView = {
         let view = UIView()
         view.tag = 2
         view.backgroundColor = UIColor(red: 28.0/255, green: 28.0/255, blue: 30.0/255, alpha: 1.0)
@@ -142,25 +128,25 @@ class SearchViewController: UIViewController {
         return view
     }()
     
-    let macBlackImage: UIImageView = {
+    private let macBlackImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "чехол")
+        image.image = UIImage(named: Constants.macBlackImageName)
         return image
     }()
     
-    let clockImage: UIImageView = {
+    private let clockImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "4")
+        image.image = UIImage(named: Constants.clockImageName)
         return image
     }()
     
-    let macOrangeImage: UIImageView = {
+    private let macOrangeImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "2")
+        image.image = UIImage(named: Constants.macOrangeImageName)
         return image
     }()
     
-    let macBlackLabel: UILabel = {
+    private let macBlackLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.macBlack
         label.textColor = .white
@@ -169,7 +155,7 @@ class SearchViewController: UIViewController {
         return label
     }()
     
-    let clockLabel: UILabel = {
+    private let clockLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.clock
         label.textColor = .white
@@ -178,7 +164,7 @@ class SearchViewController: UIViewController {
         return label
     }()
     
-    let macOrangeLabel: UILabel = {
+    private let macOrangeLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.macOrange
         label.textColor = .white
@@ -190,7 +176,10 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
+        actions()
     }
+    
+    // MARK: - Private Method
     
     private func createUI() {
         view.backgroundColor = .black
@@ -216,61 +205,67 @@ class SearchViewController: UIViewController {
         iphoneModelButton.frame = CGRect(x: 20, y: 700, width: 300, height: 30)
         view.addSubview(iphoneModelButton)
         
-        blokViewOne.frame = CGRect(x: 20, y: 280, width: 140, height: 190)
-        view.addSubview(blokViewOne)
+        blokOneView.frame = CGRect(x: 20, y: 280, width: 140, height: 190)
+        view.addSubview(blokOneView)
         
-        blokViewTwo.frame = CGRect(x: 170, y: 280, width: 140, height: 190)
-        view.addSubview(blokViewTwo)
+        blokTwoView.frame = CGRect(x: 170, y: 280, width: 140, height: 190)
+        view.addSubview(blokTwoView)
         
-        blokViewThree.frame = CGRect(x: 320, y: 280, width: 140, height: 190)
-        view.addSubview(blokViewThree)
+        blokThreeView.frame = CGRect(x: 320, y: 280, width: 140, height: 190)
+        view.addSubview(blokThreeView)
         
-        macBlackImage.frame = CGRect(x: 22, y: 35, width: 100, height: 70)
-        blokViewOne.addSubview(macBlackImage)
+        macBlackImageView.frame = CGRect(x: 22, y: 35, width: 100, height: 70)
+        blokOneView.addSubview(macBlackImageView)
         
-        clockImage.frame = CGRect(x: 35, y: 20, width: 70, height: 100)
-        blokViewTwo.addSubview(clockImage)
+        clockImageView.frame = CGRect(x: 35, y: 20, width: 70, height: 100)
+        blokTwoView.addSubview(clockImageView)
         
-        macOrangeImage.frame = CGRect(x: 22, y: 15, width: 100, height: 120)
-        blokViewThree.addSubview(macOrangeImage)
+        macOrangeImageView.frame = CGRect(x: 22, y: 15, width: 100, height: 120)
+        blokThreeView.addSubview(macOrangeImageView)
         
         macBlackLabel.frame = CGRect(x: 10, y: 115, width: 120, height: 60)
-        blokViewOne.addSubview(macBlackLabel)
+        blokOneView.addSubview(macBlackLabel)
         
         clockLabel.frame = CGRect(x: 10, y: 115, width: 120, height: 60)
-        blokViewTwo.addSubview(clockLabel)
+        blokTwoView.addSubview(clockLabel)
         
         macOrangeLabel.frame = CGRect(x: 10, y: 115, width: 120, height: 60)
-        blokViewThree.addSubview(macOrangeLabel)
+        blokThreeView.addSubview(macOrangeLabel)
         
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
-        blokViewOne.isUserInteractionEnabled = true
-        blokViewTwo.isUserInteractionEnabled = true
-        blokViewThree.isUserInteractionEnabled = true
-            
-        blokViewOne.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToAction(sender: ))))
-        blokViewTwo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToAction(sender: ))))
-        blokViewThree.addGestureRecognizer(UITapGestureRecognizer(target: self,
+        blokOneView.isUserInteractionEnabled = true
+        blokTwoView.isUserInteractionEnabled = true
+        blokThreeView.isUserInteractionEnabled = true
+        
+    }
+    
+    private func actions() {
+        
+        blokOneView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                action: #selector(goToAction(sender: ))))
+        blokTwoView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                action: #selector(goToAction(sender: ))))
+        blokThreeView.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                   action: #selector(goToAction(sender: ))))
     }
     
     @objc private func goToAction(sender: UITapGestureRecognizer) {
-
+        
         let infoVC = InfoViewController()
         
         switch sender.view?.tag {
         case 0:
-            infoVC.nameOfItem.text = macBlackLabel.text
-            infoVC.photoOfItemImage.image = UIImage(named: Constants.macBlackImageName)
+            infoVC.infoLabel.text = macBlackLabel.text
+            infoVC.photoImageView.image = UIImage(named: Constants.macBlackImageName)
         case 1:
-            infoVC.nameOfItem.text = clockLabel.text
-            infoVC.photoOfItemImage.image = UIImage(named: Constants.clockImageName)
+            infoVC.infoLabel.text = clockLabel.text
+            infoVC.photoImageView.image = UIImage(named: Constants.clockImageName)
         case 2:
-            infoVC.nameOfItem.text = macOrangeLabel.text
-            infoVC.photoOfItemImage.image = UIImage(named: Constants.macOrangeImageName)
+            infoVC.infoLabel.text = macOrangeLabel.text
+            infoVC.photoImageView.image = UIImage(named: Constants.macOrangeImageName)
         default:
             break
         }

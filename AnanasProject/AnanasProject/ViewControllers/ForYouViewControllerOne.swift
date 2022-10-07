@@ -14,6 +14,8 @@ class ForYouViewControllerOne: UIViewController {
         createUI()
     }
     
+    // MARK: - Private Method
+    
     private func createUI() {
         view.backgroundColor = .systemMint
     }

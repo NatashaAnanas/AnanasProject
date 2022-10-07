@@ -6,13 +6,15 @@
 //
 
 import UIKit
-/// /// Контроллер с разделом "Корзина"
+/// Контроллер с разделом "Корзина"
 class BagViewControllerThree: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
     }
+    
+    // MARK: - Private Method
     private func createUI() {
         view.backgroundColor = .green
     }
