@@ -7,7 +7,7 @@
 
 import UIKit
 /// Контроллер с разделом "Купить"
-class BuyViewController: UIViewController {
+final class BuyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

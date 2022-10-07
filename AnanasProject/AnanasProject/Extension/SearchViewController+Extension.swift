@@ -6,8 +6,9 @@
 //
 
 import UIKit
-/// Расширение UISearchController
+/// Расширение для SearchViewController
 extension SearchViewController: UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
     }
 }

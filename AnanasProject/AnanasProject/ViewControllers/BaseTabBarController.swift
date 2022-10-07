@@ -7,7 +7,7 @@
 
 import UIKit
 /// Базовый TabBarController
-class BaseTabBarController: UITabBarController {
+final class BaseTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class BaseTabBarController: UITabBarController {
         let navController = UINavigationController(rootViewController: viewController)
         
         navController.navigationBar.prefersLargeTitles = true
-        navController.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navController.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         navController.tabBarItem.title = titel
         navController.tabBarItem.image = UIImage(systemName: image)
         

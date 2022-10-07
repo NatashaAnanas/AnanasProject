@@ -7,7 +7,7 @@
 
 import UIKit
 /// Контроллер Поиск
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
     
     private enum Constants {
         static let history = "Варианты запросов"
@@ -15,15 +15,17 @@ class SearchViewController: UIViewController {
         static let appleCare = "  AppleCare"
         static let beats = "  Beats"
         static let iphoneModel = "  Сравнените модели iPhone"
-        static let searchPlaceholder = "Поиск"
+        static let searchPlaceholder = "Поиск по продуктам и магазинам"
         static let watch = "Недавно просмотренные"
         static let searchImageSystemName = "magnifyingglass"
         static let macBlack = "Чехол Incase Flat для MacBook Pro 16 дюймов"
         static let clock = "Спортивный ремешок Black Unity"
         static let macOrange = "Кожаный Чехол Incase Flat для MacBook Pro 16 дюймов"
+        static let airpod = "Airpods pro 2"
         static let macBlackImageName = "чехол"
         static let clockImageName = "4"
         static let macOrangeImageName = "2"
+        static let airpodsImageName = "air1"
         static let clean = "Очистить"
     }
     
@@ -101,30 +103,43 @@ class SearchViewController: UIViewController {
         return button
     }()
     
-    private let blokOneView: UIView = {
+    private let blockOneView: UIView = {
         let view = UIView()
         view.tag = 0
         view.backgroundColor = UIColor(red: 28.0/255, green: 28.0/255, blue: 30.0/255, alpha: 1.0)
         view.clipsToBounds = true
         view.layer.cornerRadius = 30
+        view.isUserInteractionEnabled = true
         return view
     }()
     
-    private let blokTwoView: UIView = {
+    private let blockTwoView: UIView = {
         let view = UIView()
         view.tag = 1
         view.backgroundColor = UIColor(red: 28.0/255, green: 28.0/255, blue: 30.0/255, alpha: 1.0)
         view.clipsToBounds = true
         view.layer.cornerRadius = 30
+        view.isUserInteractionEnabled = true
         return view
     }()
     
-    private let blokThreeView: UIView = {
+    private let blockThreeView: UIView = {
         let view = UIView()
         view.tag = 2
         view.backgroundColor = UIColor(red: 28.0/255, green: 28.0/255, blue: 30.0/255, alpha: 1.0)
         view.clipsToBounds = true
         view.layer.cornerRadius = 30
+        view.isUserInteractionEnabled = true
+        return view
+    }()
+    
+    private let blockFourView: UIView = {
+        let view = UIView()
+        view.tag = 3
+        view.backgroundColor = UIColor(red: 28.0/255, green: 28.0/255, blue: 30.0/255, alpha: 1.0)
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 30
+        view.isUserInteractionEnabled = true
         return view
     }()
     
@@ -143,6 +158,12 @@ class SearchViewController: UIViewController {
     private let macOrangeImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: Constants.macOrangeImageName)
+        return image
+    }()
+    
+    private let airpodsImageView: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: Constants.airpodsImageName)
         return image
     }()
     
@@ -172,7 +193,23 @@ class SearchViewController: UIViewController {
         label.numberOfLines = 0
         return label
     }()
-
+    
+    private let airpodsLabel: UILabel = {
+        let label = UILabel()
+        label.text = Constants.airpod
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 14)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private let scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.backgroundColor = .black
+        scroll.contentSize = CGSize(width: 630, height: 140)
+        return scroll
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
@@ -183,6 +220,9 @@ class SearchViewController: UIViewController {
     
     private func createUI() {
         view.backgroundColor = .black
+        
+        scrollView.frame = CGRect(x: 0, y: 280, width: view.bounds.width, height: 190)
+        view.addSubview(scrollView)
         
         watchlabel.frame = CGRect(x: 20, y: 230, width: 300, height: 40)
         view.addSubview(watchlabel)
@@ -205,50 +245,56 @@ class SearchViewController: UIViewController {
         iphoneModelButton.frame = CGRect(x: 20, y: 700, width: 300, height: 30)
         view.addSubview(iphoneModelButton)
         
-        blokOneView.frame = CGRect(x: 20, y: 280, width: 140, height: 190)
-        view.addSubview(blokOneView)
+        blockOneView.frame = CGRect(x: 20, y: 0, width: 140, height: 190)
+        scrollView.addSubview(blockOneView)
         
-        blokTwoView.frame = CGRect(x: 170, y: 280, width: 140, height: 190)
-        view.addSubview(blokTwoView)
+        blockTwoView.frame = CGRect(x: 170, y: 0, width: 140, height: 190)
+        scrollView.addSubview(blockTwoView)
         
-        blokThreeView.frame = CGRect(x: 320, y: 280, width: 140, height: 190)
-        view.addSubview(blokThreeView)
+        blockThreeView.frame = CGRect(x: 320, y: 0, width: 140, height: 190)
+        scrollView.addSubview(blockThreeView)
+        
+        blockFourView.frame = CGRect(x: 470, y: 0, width: 140, height: 190)
+        scrollView.addSubview(blockFourView)
         
         macBlackImageView.frame = CGRect(x: 22, y: 35, width: 100, height: 70)
-        blokOneView.addSubview(macBlackImageView)
+        blockOneView.addSubview(macBlackImageView)
         
         clockImageView.frame = CGRect(x: 35, y: 20, width: 70, height: 100)
-        blokTwoView.addSubview(clockImageView)
+        blockTwoView.addSubview(clockImageView)
         
         macOrangeImageView.frame = CGRect(x: 22, y: 15, width: 100, height: 120)
-        blokThreeView.addSubview(macOrangeImageView)
+        blockThreeView.addSubview(macOrangeImageView)
+        
+        airpodsImageView.frame = CGRect(x: 22, y: 15, width: 100, height: 120)
+        blockFourView.addSubview(airpodsImageView)
         
         macBlackLabel.frame = CGRect(x: 10, y: 115, width: 120, height: 60)
-        blokOneView.addSubview(macBlackLabel)
+        blockOneView.addSubview(macBlackLabel)
         
         clockLabel.frame = CGRect(x: 10, y: 115, width: 120, height: 60)
-        blokTwoView.addSubview(clockLabel)
+        blockTwoView.addSubview(clockLabel)
         
         macOrangeLabel.frame = CGRect(x: 10, y: 115, width: 120, height: 60)
-        blokThreeView.addSubview(macOrangeLabel)
+        blockThreeView.addSubview(macOrangeLabel)
+        
+        airpodsLabel.frame = CGRect(x: 10, y: 115, width: 120, height: 60)
+        blockFourView.addSubview(airpodsLabel)
         
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        
-        blokOneView.isUserInteractionEnabled = true
-        blokTwoView.isUserInteractionEnabled = true
-        blokThreeView.isUserInteractionEnabled = true
-        
     }
     
     private func actions() {
         
-        blokOneView.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                                action: #selector(goToAction(sender: ))))
-        blokTwoView.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                                action: #selector(goToAction(sender: ))))
-        blokThreeView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+        blockOneView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                 action: #selector(goToAction(sender: ))))
+        blockTwoView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                 action: #selector(goToAction(sender: ))))
+        blockThreeView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                   action: #selector(goToAction(sender: ))))
+        blockFourView.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                   action: #selector(goToAction(sender: ))))
     }
     
@@ -266,6 +312,9 @@ class SearchViewController: UIViewController {
         case 2:
             infoVC.infoLabel.text = macOrangeLabel.text
             infoVC.photoImageView.image = UIImage(named: Constants.macOrangeImageName)
+        case 3:
+            infoVC.infoLabel.text = airpodsLabel.text
+            infoVC.photoImageView.image = UIImage(named: Constants.airpodsImageName)
         default:
             break
         }

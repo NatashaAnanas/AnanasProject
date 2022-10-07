@@ -7,7 +7,7 @@
 
 import UIKit
 /// Контроллер с разделом "Корзина"
-class BagViewControllerThree: UIViewController {
+final class BagViewControllerThree: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

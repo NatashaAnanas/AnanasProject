@@ -7,7 +7,7 @@
 
 import UIKit
 /// Контроллер с разделом "Для вас"
-class ForYouViewControllerOne: UIViewController {
+final class ForYouViewControllerOne: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

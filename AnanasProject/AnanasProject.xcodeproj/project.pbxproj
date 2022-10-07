@@ -17,11 +17,13 @@
 		4179EEF028EE03F8000D5121 /* ForYouViewControllerOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEEF28EE03F8000D5121 /* ForYouViewControllerOne.swift */; };
 		4179EEF428EE042D000D5121 /* BagViewControllerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */; };
 		41B01B1328EF6B6300929E3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1228EF6B6300929E3A /* SearchViewController.swift */; };
-		41B01B1828EF6C1900929E3A /* Extension+UISearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1728EF6C1900929E3A /* Extension+UISearchController.swift */; };
+		41B01B1828EF6C1900929E3A /* SearchViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */; };
 		41B01B1A28EF8E7400929E3A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1928EF8E7400929E3A /* InfoViewController.swift */; };
 		41B01B1C28EF98FA00929E3A /* чехол.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B01B1B28EF98FA00929E3A /* чехол.png */; };
 		41B01B1E28EF990400929E3A /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B01B1D28EF990400929E3A /* 4.png */; };
 		41B01B2028EF990B00929E3A /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B01B1F28EF990B00929E3A /* 2.png */; };
+		41D6202A28EFEA1B00C0BEA5 /* airpods.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D6202928EFEA1B00C0BEA5 /* airpods.png */; };
+		41D6203228EFEE4A00C0BEA5 /* air1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D6203128EFEE4A00C0BEA5 /* air1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +39,13 @@
 		4179EEEF28EE03F8000D5121 /* ForYouViewControllerOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewControllerOne.swift; sourceTree = "<group>"; };
 		4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewControllerThree.swift; sourceTree = "<group>"; };
 		41B01B1228EF6B6300929E3A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		41B01B1728EF6C1900929E3A /* Extension+UISearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UISearchController.swift"; sourceTree = "<group>"; };
+		41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Extension.swift"; sourceTree = "<group>"; };
 		41B01B1928EF8E7400929E3A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		41B01B1B28EF98FA00929E3A /* чехол.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "чехол.png"; path = "../../../../Downloads/images/чехол.png"; sourceTree = "<group>"; };
 		41B01B1D28EF990400929E3A /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = ../../../../Downloads/images/4.png; sourceTree = "<group>"; };
 		41B01B1F28EF990B00929E3A /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../../Downloads/images/2.png; sourceTree = "<group>"; };
+		41D6202928EFEA1B00C0BEA5 /* airpods.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = airpods.png; path = "../../../../Downloads/images 2/airpods.png"; sourceTree = "<group>"; };
+		41D6203128EFEE4A00C0BEA5 /* air1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = air1.png; path = ../../../air1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				41B01B1B28EF98FA00929E3A /* чехол.png */,
 				41B01B1D28EF990400929E3A /* 4.png */,
 				41B01B1F28EF990B00929E3A /* 2.png */,
+				41D6202928EFEA1B00C0BEA5 /* airpods.png */,
+				41D6203128EFEE4A00C0BEA5 /* air1.png */,
 			);
 			path = AnanasProject;
 			sourceTree = "<group>";
@@ -105,7 +111,7 @@
 		41B01B1628EF6BE700929E3A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				41B01B1728EF6C1900929E3A /* Extension+UISearchController.swift */,
+				41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -171,7 +177,9 @@
 			files = (
 				41B01B2028EF990B00929E3A /* 2.png in Resources */,
 				4179EEE428EDEBFC000D5121 /* LaunchScreen.storyboard in Resources */,
+				41D6203228EFEE4A00C0BEA5 /* air1.png in Resources */,
 				4179EEE128EDEBFC000D5121 /* Assets.xcassets in Resources */,
+				41D6202A28EFEA1B00C0BEA5 /* airpods.png in Resources */,
 				4179EEDF28EDEBF8000D5121 /* Main.storyboard in Resources */,
 				41B01B1E28EF990400929E3A /* 4.png in Resources */,
 				41B01B1C28EF98FA00929E3A /* чехол.png in Resources */,
@@ -207,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4179EEEE28EE0123000D5121 /* BaseTabBarController.swift in Sources */,
-				41B01B1828EF6C1900929E3A /* Extension+UISearchController.swift in Sources */,
+				41B01B1828EF6C1900929E3A /* SearchViewController+Extension.swift in Sources */,
 				4179EEF028EE03F8000D5121 /* ForYouViewControllerOne.swift in Sources */,
 				41B01B1328EF6B6300929E3A /* SearchViewController.swift in Sources */,
 				41B01B1A28EF8E7400929E3A /* InfoViewController.swift in Sources */,
