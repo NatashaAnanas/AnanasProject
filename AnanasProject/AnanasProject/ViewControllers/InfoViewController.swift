@@ -26,14 +26,6 @@ final class InfoViewController: UIViewController {
         return button
     }()
     
-    private let separateProgressView: UIProgressView = {
-        let progress = UIProgressView(progressViewStyle: .bar)
-        progress.setProgress(0.3, animated: true)
-        progress.backgroundColor = .tertiaryLabel
-        progress.progressTintColor = .lightGray
-        return progress
-    }()
-    
     let infoLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 18)
@@ -69,10 +61,6 @@ final class InfoViewController: UIViewController {
             addBagButton.frame = CGRect(x: 0, y: 660, width: 340, height: 35)
             addBagButton.center.x = view.center.x
             view.addSubview(addBagButton)
-            
-            separateProgressView.frame  = CGRect(x: 0, y: 420, width: 350, height: 50)
-            separateProgressView.center.x = view.center.x
-            view.addSubview(separateProgressView)
         }
         
         func addItems() {
