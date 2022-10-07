@@ -8,25 +8,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AnanasProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BuyViewController" customModule="AnanasProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="3VZ-2z-f8G"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-543" y="80"/>
+            <point key="canvasLocation" x="406" y="856"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="3GU-Cg-DkP">
             <objects>
-                <viewController id="koJ-S9-908" sceneMemberID="viewController">
+                <viewController id="koJ-S9-908" customClass="InfoViewController" customModule="AnanasProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SIY-Go-gZ3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,12 +38,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCv-ki-eFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="375"/>
+            <point key="canvasLocation" x="1296" y="448"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="BrH-U3-v6o">
+            <objects>
+                <viewController id="FCJ-u8-cNl" customClass="SearchViewController" customModule="AnanasProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SvO-xx-gkR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dBW-mE-sMe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Osy-Tk-VMV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFa-Bh-eMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="-615"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="1LC-I5-wUB">
             <objects>
-                <viewController id="ByT-RR-DCa" sceneMemberID="viewController">
+                <viewController id="ByT-RR-DCa" customClass="ForYouViewControllerOne" customModule="AnanasProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ebz-CS-g6q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9O-zd-452" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="-232"/>
+            <point key="canvasLocation" x="1295.6521739130435" y="-232.36607142857142"/>
         </scene>
         <!--Base Tab Bar Controller-->
         <scene sceneID="rez-gY-Uz5">
@@ -67,6 +84,8 @@
                     <connections>
                         <segue destination="ByT-RR-DCa" kind="relationship" relationship="viewControllers" id="Lva-zj-VJI"/>
                         <segue destination="koJ-S9-908" kind="relationship" relationship="viewControllers" id="xi7-jL-dGt"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="PTH-Zr-YkE"/>
+                        <segue destination="FCJ-u8-cNl" kind="relationship" relationship="viewControllers" id="1CM-V4-TPI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytt-Pi-iYH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

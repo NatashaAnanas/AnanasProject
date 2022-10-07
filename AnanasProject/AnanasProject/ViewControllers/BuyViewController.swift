@@ -1,13 +1,13 @@
 //
-//  ViewControllerTwo.swift
+//  BuyViewController.swift
 //  AnanasProject
 //
 //  Created by Анастасия Козлова on 05.10.2022.
 //
 
 import UIKit
-/// ViewControllerThree 
-class ViewControllerTwo: UIViewController {
+/// Контроллер с разделом "Купить"
+class BuyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +15,6 @@ class ViewControllerTwo: UIViewController {
     }
     
     private func createUI() {
-        view.backgroundColor = .systemIndigo
+        view.backgroundColor = .systemYellow
     }
 }

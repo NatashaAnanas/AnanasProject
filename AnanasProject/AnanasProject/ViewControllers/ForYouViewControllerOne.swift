@@ -1,13 +1,13 @@
 //
-//  ViewControllerThree.swift
+//  FotYouViewControllerOne.swift
 //  AnanasProject
 //
 //  Created by Анастасия Козлова on 05.10.2022.
 //
 
 import UIKit
-/// ViewControllerThree
-class ViewControllerThree: UIViewController {
+/// Контроллер с разделом "Для вас"
+class ForYouViewControllerOne: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +15,6 @@ class ViewControllerThree: UIViewController {
     }
     
     private func createUI() {
-        view.backgroundColor = .green
+        view.backgroundColor = .systemMint
     }
 }
