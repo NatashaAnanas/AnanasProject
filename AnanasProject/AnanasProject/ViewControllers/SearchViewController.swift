@@ -22,10 +22,10 @@ final class SearchViewController: UIViewController {
         static let clock = "Спортивный ремешок Black Unity"
         static let macOrange = "Кожаный Чехол Incase Flat для MacBook Pro 16 дюймов"
         static let airpod = "Airpods pro 2"
-        static let macBlackImageName = "чехол"
-        static let clockImageName = "4"
-        static let macOrangeImageName = "2"
-        static let airpodsImageName = "air1"
+        static let macBlackImageName = ["black1", "black2", "black3"]
+        static let clockImageName =  ["clock1", "clock2"]
+        static let macOrangeImageName = ["orange1", "orange2", "orange3"]
+        static let airpodsImageName = ["air1"]
         static let clean = "Очистить"
     }
     
@@ -145,25 +145,25 @@ final class SearchViewController: UIViewController {
     
     private let macBlackImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: Constants.macBlackImageName)
+        image.image = UIImage(named: Constants.macBlackImageName.first ?? "")
         return image
     }()
     
     private let clockImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: Constants.clockImageName)
+        image.image = UIImage(named: Constants.clockImageName.first ?? "")
         return image
     }()
     
     private let macOrangeImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: Constants.macOrangeImageName)
+        image.image = UIImage(named: Constants.macOrangeImageName.first ?? "")
         return image
     }()
     
     private let airpodsImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: Constants.airpodsImageName)
+        image.image = UIImage(named: Constants.airpodsImageName.first ?? "")
         return image
     }()
     
@@ -305,16 +305,25 @@ final class SearchViewController: UIViewController {
         switch sender.view?.tag {
         case 0:
             infoVC.infoLabel.text = macBlackLabel.text
-            infoVC.photoImageView.image = UIImage(named: Constants.macBlackImageName)
+            infoVC.firstImageView.image = UIImage(named: Constants.macBlackImageName.first ?? "")
+            infoVC.secondImageView.image = UIImage(named: Constants.macBlackImageName[1])
+            infoVC.thirdImageView.image = UIImage(named: Constants.macBlackImageName[2])
+            infoVC.smallInfoLabel.text = macBlackLabel.text
         case 1:
             infoVC.infoLabel.text = clockLabel.text
-            infoVC.photoImageView.image = UIImage(named: Constants.clockImageName)
+            infoVC.firstImageView.image = UIImage(named: Constants.clockImageName.first ?? "")
+            infoVC.secondImageView.image = UIImage(named: Constants.clockImageName.last ?? "")
+            infoVC.smallInfoLabel.text = clockLabel.text
         case 2:
             infoVC.infoLabel.text = macOrangeLabel.text
-            infoVC.photoImageView.image = UIImage(named: Constants.macOrangeImageName)
+            infoVC.firstImageView.image = UIImage(named: Constants.macOrangeImageName.first ?? "")
+            infoVC.secondImageView.image = UIImage(named: Constants.macOrangeImageName[1])
+            infoVC.thirdImageView.image = UIImage(named: Constants.macOrangeImageName.last ?? "")
+            infoVC.smallInfoLabel.text = macOrangeLabel.text
         case 3:
             infoVC.infoLabel.text = airpodsLabel.text
-            infoVC.photoImageView.image = UIImage(named: Constants.airpodsImageName)
+            infoVC.firstImageView.image = UIImage(named: Constants.airpodsImageName.first ?? "")
+            infoVC.smallInfoLabel.text = airpodsLabel.text
         default:
             break
         }

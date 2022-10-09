@@ -42,9 +42,9 @@ final class BaseTabBarController: UITabBarController {
         viewController.navigationItem.title = titel
         
         tabBar.backgroundColor = UIColor(red: 18.0/255,
-                                                       green: 18.0/255,
-                                                       blue: 18.0/255,
-                                                       alpha: 1.0)
+                                         green: 18.0/255,
+                                         blue: 18.0/255,
+                                         alpha: 1.0)
         
         return navController
     }
