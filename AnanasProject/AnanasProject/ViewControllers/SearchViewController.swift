@@ -207,6 +207,8 @@ final class SearchViewController: UIViewController {
         let scroll = UIScrollView()
         scroll.backgroundColor = .black
         scroll.contentSize = CGSize(width: 630, height: 140)
+        scroll.indicatorStyle = .default
+        scroll.scrollIndicatorInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
         return scroll
     }()
     
@@ -309,21 +311,25 @@ final class SearchViewController: UIViewController {
             infoVC.secondImageView.image = UIImage(named: Constants.macBlackImageName[1])
             infoVC.thirdImageView.image = UIImage(named: Constants.macBlackImageName[2])
             infoVC.smallInfoLabel.text = macBlackLabel.text
+            infoVC.count = Constants.macBlackImageName.count
         case 1:
             infoVC.infoLabel.text = clockLabel.text
             infoVC.firstImageView.image = UIImage(named: Constants.clockImageName.first ?? "")
             infoVC.secondImageView.image = UIImage(named: Constants.clockImageName.last ?? "")
             infoVC.smallInfoLabel.text = clockLabel.text
+            infoVC.count = Constants.clockImageName.count
         case 2:
             infoVC.infoLabel.text = macOrangeLabel.text
             infoVC.firstImageView.image = UIImage(named: Constants.macOrangeImageName.first ?? "")
             infoVC.secondImageView.image = UIImage(named: Constants.macOrangeImageName[1])
             infoVC.thirdImageView.image = UIImage(named: Constants.macOrangeImageName.last ?? "")
             infoVC.smallInfoLabel.text = macOrangeLabel.text
+            infoVC.count = Constants.macOrangeImageName.count
         case 3:
             infoVC.infoLabel.text = airpodsLabel.text
             infoVC.firstImageView.image = UIImage(named: Constants.airpodsImageName.first ?? "")
             infoVC.smallInfoLabel.text = airpodsLabel.text
+            infoVC.count = Constants.airpodsImageName.count
         default:
             break
         }

@@ -16,9 +16,18 @@ final class InfoViewController: UIViewController {
         static let infoTextThree = "Варианты доставки для местоположкния: 115533"
         static let connectWith = "Совместимо с MacBook Pro - Евгений"
         static let price = "3 990.00 руб"
+        static let boxSystemName = "cube.box"
+        static let yes = "yes"
+        static let heart = "heart"
+        static let square = "square.and.arrow.up"
     }
     
     // MARK: - Visual Components
+    
+    private let boxImageView: UIImageView = {
+        let image = UIImageView(image: UIImage(systemName: Constant.boxSystemName))
+        return image
+    }()
     
     private let addBagButton: UIButton = {
         let button = UIButton()
@@ -55,6 +64,15 @@ final class InfoViewController: UIViewController {
     let thirdImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    let yesImageView: UIImageView = {
+        var imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: Constant.yes)
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -105,12 +123,14 @@ final class InfoViewController: UIViewController {
     
     private lazy var imageScrollView: UIScrollView = {
         let scroll = UIScrollView()
-        scroll.contentSize = CGSize(width: Int(view.bounds.width) * 3, height: 200)
+        scroll.contentSize = CGSize(width: Int(view.bounds.width) * self.count, height: 240)
         scroll.isPagingEnabled = true
+        scroll.indicatorStyle = .white
+        scroll.horizontalScrollIndicatorInsets = UIEdgeInsets(top: 100, left: 0, bottom: 10, right: 0)
         return scroll
     }()
     
-    let firstTextLabel: UILabel = {
+    private let firstTextLabel: UILabel = {
         let text = UILabel()
         text.text = Constant.infoTextOne
         text.textColor = .white
@@ -119,7 +139,7 @@ final class InfoViewController: UIViewController {
         return text
     }()
     
-    let secondTextLabel: UILabel = {
+    private let secondTextLabel: UILabel = {
         let text = UILabel()
         text.text = Constant.infoTextTwo
         text.font = .systemFont(ofSize: 13)
@@ -128,7 +148,7 @@ final class InfoViewController: UIViewController {
         return text
     }()
     
-    let thirdTextLabel: UILabel = {
+    private let thirdTextLabel: UILabel = {
         let text = UILabel()
         text.text = Constant.infoTextThree
         text.font = .systemFont(ofSize: 13)
@@ -137,7 +157,7 @@ final class InfoViewController: UIViewController {
         return text
     }()
     
-    let priceLabel: UILabel = {
+    private let priceLabel: UILabel = {
         let text = UILabel()
         text.text = Constant.price
         text.font = .systemFont(ofSize: 16)
@@ -146,82 +166,97 @@ final class InfoViewController: UIViewController {
         return text
     }()
     
+    // MARK: - Public Properties
+    
+    var count = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
         addItems()
+        actions()
+    }
+    
+    // MARK: - Private Method
+    
+    private func createUI() {
+        view.backgroundColor = .black
         
-        // MARK: - Public Method
-        func createUI() {
-            view.backgroundColor = .black
-            
-            imageScrollView.frame = CGRect(x: 0, y: 200, width: view.bounds.width, height: 200)
-            view.addSubview(imageScrollView)
-            
-            firstImageView.frame = CGRect(x: 0, y: 0, width: 300, height: 200)
-            firstImageView.center.x = imageScrollView.center.x
-            imageScrollView.addSubview(firstImageView)
-            
-            secondImageView.frame = CGRect(x: 0, y: 0, width: 300, height: 200)
-            secondImageView.center.x = firstImageView.center.x + view.bounds.width
-            imageScrollView.addSubview(secondImageView)
-            
-            thirdImageView.frame = CGRect(x: 0, y: 0, width: 300, height: 200)
-            thirdImageView.center.x = secondImageView.center.x + view.bounds.width
-            imageScrollView.addSubview(thirdImageView)
-            
-            infoLabel.frame = CGRect(x: 0, y: 100, width: 400, height: 50)
-            infoLabel.center.x = view.center.x
-            view.addSubview(infoLabel)
-            
-            addBagButton.frame = CGRect(x: 0, y: 660, width: 340, height: 35)
-            addBagButton.center.x = view.center.x
-            view.addSubview(addBagButton)
-            
-            smallInfoLabel.frame = CGRect(x: 0, y: 450, width: 350, height: 30)
-            smallInfoLabel.center.x = view.center.x
-            view.addSubview(smallInfoLabel)
-            
-            whiteButton.frame = CGRect(x: 160, y: 530, width: 40, height: 40)
-            view.addSubview(whiteButton)
-            
-            blackButton.frame = CGRect(x: 210, y: 530, width: 40, height: 40)
-            view.addSubview(blackButton)
-            
-            connectInfoLabel.frame = CGRect(x: 0, y: 600, width: 300, height: 30)
-            connectInfoLabel.center.x = view.center.x
-            view.addSubview(connectInfoLabel)
-            
-            firstTextLabel.frame = CGRect(x: 60, y: 730, width: 300, height: 30)
-            view.addSubview(firstTextLabel)
-            
-            secondTextLabel.frame = CGRect(x: 60, y: 750, width: 300, height: 20)
-            view.addSubview(secondTextLabel)
-            
-            thirdTextLabel.frame = CGRect(x: 60, y: 765, width: 350, height: 20)
-            view.addSubview(thirdTextLabel)
-            
-            priceLabel.frame = CGRect(x: 0, y: 135, width: 100, height: 30)
-            priceLabel.center.x = view.center.x
-            view.addSubview(priceLabel)
-            
-            borderButton.frame = CGRect(x: 0, y: 0, width: 48, height: 48)
-
-            blackButton.addTarget(self, action: #selector(chouseColorAction(sender: )), for: .touchUpInside)
-            
-            whiteButton.addTarget(self, action: #selector(chouseColorAction(sender: )), for: .touchUpInside)
-        }
+        imageScrollView.frame = CGRect(x: 0, y: 200, width: view.bounds.width, height: 240)
+        view.addSubview(imageScrollView)
         
-        func addItems() {
-            navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"),
-                                                                  style: .done,
-                                                                  target: self,
-                                                                  action: nil),
-                                                  UIBarButtonItem(image: UIImage(systemName: "heart"),
-                                                                  style: .done,
-                                                                  target: self,
-                                                                  action: nil)]
-        }
+        firstImageView.frame = CGRect(x: 0, y: 0, width: 300, height: 190)
+        firstImageView.center.x = imageScrollView.center.x
+        imageScrollView.addSubview(firstImageView)
+        
+        secondImageView.frame = CGRect(x: 0, y: 0, width: 300, height: 190)
+        secondImageView.center.x = firstImageView.center.x + view.bounds.width
+        imageScrollView.addSubview(secondImageView)
+        
+        thirdImageView.frame = CGRect(x: 0, y: 0, width: 300, height: 190)
+        thirdImageView.center.x = secondImageView.center.x + view.bounds.width
+        imageScrollView.addSubview(thirdImageView)
+        
+        infoLabel.frame = CGRect(x: 0, y: 100, width: 400, height: 50)
+        infoLabel.center.x = view.center.x
+        view.addSubview(infoLabel)
+        
+        addBagButton.frame = CGRect(x: 0, y: 660, width: 340, height: 35)
+        addBagButton.center.x = view.center.x
+        view.addSubview(addBagButton)
+        
+        smallInfoLabel.frame = CGRect(x: 0, y: 450, width: 350, height: 30)
+        smallInfoLabel.center.x = view.center.x
+        view.addSubview(smallInfoLabel)
+        
+        whiteButton.frame = CGRect(x: 160, y: 530, width: 40, height: 40)
+        view.addSubview(whiteButton)
+        
+        blackButton.frame = CGRect(x: 210, y: 530, width: 40, height: 40)
+        view.addSubview(blackButton)
+        
+        connectInfoLabel.frame = CGRect(x: 0, y: 600, width: 300, height: 30)
+        connectInfoLabel.center.x = view.center.x
+        view.addSubview(connectInfoLabel)
+        
+        yesImageView.frame = CGRect(x: 50, y: 605, width: 20, height: 20)
+        view.addSubview(yesImageView)
+        
+        firstTextLabel.frame = CGRect(x: 60, y: 730, width: 300, height: 30)
+        view.addSubview(firstTextLabel)
+        
+        secondTextLabel.frame = CGRect(x: 60, y: 750, width: 300, height: 20)
+        view.addSubview(secondTextLabel)
+        
+        thirdTextLabel.frame = CGRect(x: 60, y: 765, width: 350, height: 20)
+        view.addSubview(thirdTextLabel)
+        
+        priceLabel.frame = CGRect(x: 0, y: 140, width: 100, height: 30)
+        priceLabel.center.x = view.center.x
+        view.addSubview(priceLabel)
+        
+        borderButton.frame = CGRect(x: 0, y: 0, width: 48, height: 48)
+        
+        boxImageView.frame = CGRect(x: 30, y: 740, width: 20, height: 20)
+        view.addSubview(boxImageView)
+    }
+    
+    private func actions() {
+        
+        blackButton.addTarget(self, action: #selector(chouseColorAction(sender: )), for: .touchUpInside)
+        
+        whiteButton.addTarget(self, action: #selector(chouseColorAction(sender: )), for: .touchUpInside)
+    }
+    
+    private func addItems() {
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(systemName: Constant.heart),
+                                                              style: .done,
+                                                              target: self,
+                                                              action: nil),
+                                              UIBarButtonItem(image: UIImage(systemName: Constant.square),
+                                                              style: .done,
+                                                              target: self,
+                                                              action: nil)]
     }
     
     @objc private func chouseColorAction(sender: UIButton) {

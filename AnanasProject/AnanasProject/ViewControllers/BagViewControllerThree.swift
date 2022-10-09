@@ -8,7 +8,7 @@
 import UIKit
 /// Контроллер с разделом "Корзина"
 final class BagViewControllerThree: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()

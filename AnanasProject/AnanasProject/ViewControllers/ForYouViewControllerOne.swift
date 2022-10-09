@@ -8,7 +8,7 @@
 import UIKit
 /// Контроллер с разделом "Для вас"
 final class ForYouViewControllerOne: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
