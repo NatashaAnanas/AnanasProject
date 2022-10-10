@@ -9,6 +9,7 @@ import UIKit
 /// Контроллер Поиск
 final class SearchViewController: UIViewController {
     
+    // MARK: - Constants
     private enum Constants {
         static let history = "Варианты запросов"
         static let airPods = "  AirPods"
@@ -208,8 +209,32 @@ final class SearchViewController: UIViewController {
         scroll.backgroundColor = .black
         scroll.contentSize = CGSize(width: 630, height: 140)
         scroll.indicatorStyle = .default
-        scroll.scrollIndicatorInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        scroll.showsHorizontalScrollIndicator = false
         return scroll
+    }()
+    
+    private lazy var separatorViewOne: UIView = {
+        let view = UIView()
+        view.backgroundColor = .tertiaryLabel
+        return view
+    }()
+    
+    private let separatorViewTwo: UIView = {
+        let view = UIView()
+        view.backgroundColor = .tertiaryLabel
+        return view
+    }()
+    
+    private let separatorViewThree: UIView = {
+        let view = UIView()
+        view.backgroundColor = .tertiaryLabel
+        return view
+    }()
+    
+    private let separatorViewFour: UIView = {
+        let view = UIView()
+        view.backgroundColor = .tertiaryLabel
+        return view
     }()
     
     override func viewDidLoad() {
@@ -238,14 +263,26 @@ final class SearchViewController: UIViewController {
         airPodsButton.frame = CGRect(x: 20, y: 550, width: 105, height: 30)
         view.addSubview(airPodsButton)
         
+        separatorViewOne.frame = CGRect(x: 19, y: 585, width: 370, height: 2)
+        view.addSubview(separatorViewOne)
+        
         appleCareButton.frame = CGRect(x: 20, y: 600, width: 130, height: 30)
         view.addSubview(appleCareButton)
+        
+        separatorViewTwo.frame = CGRect(x: 19, y: 635, width: 370, height: 2)
+        view.addSubview(separatorViewTwo)
         
         beatsButton.frame = CGRect(x: 20, y: 650, width: 90, height: 30)
         view.addSubview(beatsButton)
         
+        separatorViewThree.frame = CGRect(x: 19, y: 685, width: 370, height: 2)
+        view.addSubview(separatorViewThree)
+        
         iphoneModelButton.frame = CGRect(x: 20, y: 700, width: 300, height: 30)
         view.addSubview(iphoneModelButton)
+        
+        separatorViewFour.frame = CGRect(x: 19, y: 735, width: 370, height: 2)
+        view.addSubview(separatorViewFour)
         
         blockOneView.frame = CGRect(x: 20, y: 0, width: 140, height: 190)
         scrollView.addSubview(blockOneView)

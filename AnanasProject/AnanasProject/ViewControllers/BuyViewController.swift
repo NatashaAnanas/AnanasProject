@@ -9,6 +9,7 @@ import UIKit
 /// Контроллер с разделом "Купить"
 final class BuyViewController: UIViewController {
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()

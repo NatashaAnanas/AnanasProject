@@ -9,6 +9,7 @@ import UIKit
 /// Контроллер с разделом "Для вас"
 final class InfoViewController: UIViewController {
     
+    // MARK: - Constants
     private enum Constant {
         static let addToBag = "Добавить в корзину"
         static let infoTextOne = "Заказ сегодня в течении для, доставка:"

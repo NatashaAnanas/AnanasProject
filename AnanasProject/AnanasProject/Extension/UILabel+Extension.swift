@@ -22,6 +22,6 @@ extension UILabel {
         myMutableString.addAttribute(NSAttributedString.Key.foregroundColor,
                                      value: color,
                                      range: NSRange(location: locationNumber, length: length))
-        self.attributedText = myMutableString
+        attributedText = myMutableString
     }
 }
