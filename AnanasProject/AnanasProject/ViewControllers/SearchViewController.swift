@@ -12,6 +12,7 @@ final class SearchViewController: UIViewController {
     // MARK: - Constants
     private enum Constants {
         static let history = "Варианты запросов"
+        static let historyLabels = ["  AirPods", "  AppleCare", "  Beats", "  Сравнените модели iPhone"]
         static let airPods = "  AirPods"
         static let appleCare = "  AppleCare"
         static let beats = "  Beats"
@@ -213,29 +214,7 @@ final class SearchViewController: UIViewController {
         return scroll
     }()
     
-    private lazy var separatorViewOne: UIView = {
-        let view = UIView()
-        view.backgroundColor = .tertiaryLabel
-        return view
-    }()
-    
-    private let separatorViewTwo: UIView = {
-        let view = UIView()
-        view.backgroundColor = .tertiaryLabel
-        return view
-    }()
-    
-    private let separatorViewThree: UIView = {
-        let view = UIView()
-        view.backgroundColor = .tertiaryLabel
-        return view
-    }()
-    
-    private let separatorViewFour: UIView = {
-        let view = UIView()
-        view.backgroundColor = .tertiaryLabel
-        return view
-    }()
+    private lazy var createSeparator = makeSeparatorView(yCoordinate: 585)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -247,7 +226,7 @@ final class SearchViewController: UIViewController {
     
     private func createUI() {
         view.backgroundColor = .black
-        
+
         scrollView.frame = CGRect(x: 0, y: 280, width: view.bounds.width, height: 190)
         view.addSubview(scrollView)
         
@@ -263,27 +242,14 @@ final class SearchViewController: UIViewController {
         airPodsButton.frame = CGRect(x: 20, y: 550, width: 105, height: 30)
         view.addSubview(airPodsButton)
         
-        separatorViewOne.frame = CGRect(x: 19, y: 585, width: 370, height: 2)
-        view.addSubview(separatorViewOne)
-        
         appleCareButton.frame = CGRect(x: 20, y: 600, width: 130, height: 30)
         view.addSubview(appleCareButton)
-        
-        separatorViewTwo.frame = CGRect(x: 19, y: 635, width: 370, height: 2)
-        view.addSubview(separatorViewTwo)
-        
+
         beatsButton.frame = CGRect(x: 20, y: 650, width: 90, height: 30)
         view.addSubview(beatsButton)
-        
-        separatorViewThree.frame = CGRect(x: 19, y: 685, width: 370, height: 2)
-        view.addSubview(separatorViewThree)
-        
         iphoneModelButton.frame = CGRect(x: 20, y: 700, width: 300, height: 30)
         view.addSubview(iphoneModelButton)
-        
-        separatorViewFour.frame = CGRect(x: 19, y: 735, width: 370, height: 2)
-        view.addSubview(separatorViewFour)
-        
+
         blockOneView.frame = CGRect(x: 20, y: 0, width: 140, height: 190)
         scrollView.addSubview(blockOneView)
         
@@ -323,6 +289,8 @@ final class SearchViewController: UIViewController {
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        makeRequestOptions(yCoordinateConstant: 50)
     }
     
     private func actions() {
@@ -371,5 +339,24 @@ final class SearchViewController: UIViewController {
             break
         }
         navigationController?.pushViewController(infoVC, animated: true)
+    }
+}
+
+private extension SearchViewController {
+    
+    func makeSeparatorView(yCoordinate: Int) -> UIView {
+        let view = UIView()
+        view.backgroundColor = .tertiaryLabel
+        view.frame = CGRect(x: 19, y: yCoordinate, width: 376, height: 2)
+        return view
+    }
+    
+    func makeRequestOptions(yCoordinateConstant: Int) {
+        var yCoordinateSeparatorView = 585
+        for _ in 1...Constants.historyLabels.count {
+            let separatorView = makeSeparatorView(yCoordinate: yCoordinateSeparatorView)
+            yCoordinateSeparatorView += yCoordinateConstant
+            view.addSubview(separatorView)
+        }
     }
 }
