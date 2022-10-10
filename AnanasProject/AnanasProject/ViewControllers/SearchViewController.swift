@@ -9,8 +9,10 @@ import UIKit
 /// Контроллер Поиск
 final class SearchViewController: UIViewController {
     
+    // MARK: - Constants
     private enum Constants {
         static let history = "Варианты запросов"
+        static let historyLabels = ["  AirPods", "  AppleCare", "  Beats", "  Сравнените модели iPhone"]
         static let airPods = "  AirPods"
         static let appleCare = "  AppleCare"
         static let beats = "  Beats"
@@ -207,8 +209,12 @@ final class SearchViewController: UIViewController {
         let scroll = UIScrollView()
         scroll.backgroundColor = .black
         scroll.contentSize = CGSize(width: 630, height: 140)
+        scroll.indicatorStyle = .default
+        scroll.showsHorizontalScrollIndicator = false
         return scroll
     }()
+    
+    private lazy var createSeparator = makeSeparatorView(yCoordinate: 585)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -216,11 +222,20 @@ final class SearchViewController: UIViewController {
         actions()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        createNavController()
+    }
+    
     // MARK: - Private Method
+    private func createNavController() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.backgroundColor = .black
+    }
     
     private func createUI() {
         view.backgroundColor = .black
-        
+
         scrollView.frame = CGRect(x: 0, y: 280, width: view.bounds.width, height: 190)
         view.addSubview(scrollView)
         
@@ -238,13 +253,12 @@ final class SearchViewController: UIViewController {
         
         appleCareButton.frame = CGRect(x: 20, y: 600, width: 130, height: 30)
         view.addSubview(appleCareButton)
-        
+
         beatsButton.frame = CGRect(x: 20, y: 650, width: 90, height: 30)
         view.addSubview(beatsButton)
-        
         iphoneModelButton.frame = CGRect(x: 20, y: 700, width: 300, height: 30)
         view.addSubview(iphoneModelButton)
-        
+
         blockOneView.frame = CGRect(x: 20, y: 0, width: 140, height: 190)
         scrollView.addSubview(blockOneView)
         
@@ -284,6 +298,8 @@ final class SearchViewController: UIViewController {
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        makeRequestOptions(yCoordinateConstant: 50)
     }
     
     private func actions() {
@@ -309,24 +325,47 @@ final class SearchViewController: UIViewController {
             infoVC.secondImageView.image = UIImage(named: Constants.macBlackImageName[1])
             infoVC.thirdImageView.image = UIImage(named: Constants.macBlackImageName[2])
             infoVC.smallInfoLabel.text = macBlackLabel.text
+            infoVC.count = Constants.macBlackImageName.count
         case 1:
             infoVC.infoLabel.text = clockLabel.text
             infoVC.firstImageView.image = UIImage(named: Constants.clockImageName.first ?? "")
             infoVC.secondImageView.image = UIImage(named: Constants.clockImageName.last ?? "")
             infoVC.smallInfoLabel.text = clockLabel.text
+            infoVC.count = Constants.clockImageName.count
         case 2:
             infoVC.infoLabel.text = macOrangeLabel.text
             infoVC.firstImageView.image = UIImage(named: Constants.macOrangeImageName.first ?? "")
             infoVC.secondImageView.image = UIImage(named: Constants.macOrangeImageName[1])
             infoVC.thirdImageView.image = UIImage(named: Constants.macOrangeImageName.last ?? "")
             infoVC.smallInfoLabel.text = macOrangeLabel.text
+            infoVC.count = Constants.macOrangeImageName.count
         case 3:
             infoVC.infoLabel.text = airpodsLabel.text
             infoVC.firstImageView.image = UIImage(named: Constants.airpodsImageName.first ?? "")
             infoVC.smallInfoLabel.text = airpodsLabel.text
+            infoVC.count = Constants.airpodsImageName.count
         default:
             break
         }
         navigationController?.pushViewController(infoVC, animated: true)
+    }
+}
+
+private extension SearchViewController {
+    
+    func makeSeparatorView(yCoordinate: Int) -> UIView {
+        let view = UIView()
+        view.backgroundColor = .tertiaryLabel
+        view.frame = CGRect(x: 19, y: yCoordinate, width: 376, height: 2)
+        return view
+    }
+    
+    func makeRequestOptions(yCoordinateConstant: Int) {
+        var yCoordinateSeparatorView = 585
+        for _ in 1...Constants.historyLabels.count {
+            let separatorView = makeSeparatorView(yCoordinate: yCoordinateSeparatorView)
+            yCoordinateSeparatorView += yCoordinateConstant
+            view.addSubview(separatorView)
+        }
     }
 }

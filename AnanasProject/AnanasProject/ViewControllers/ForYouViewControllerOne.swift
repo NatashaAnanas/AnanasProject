@@ -8,7 +8,8 @@
 import UIKit
 /// Контроллер с разделом "Для вас"
 final class ForYouViewControllerOne: UIViewController {
-
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()

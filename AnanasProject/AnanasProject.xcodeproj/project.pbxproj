@@ -25,6 +25,7 @@
 		4187A92528F2F0210025AC55 /* orange3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A92428F2F0200025AC55 /* orange3.png */; };
 		4187A92728F2F08D0025AC55 /* clock2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A92628F2F08D0025AC55 /* clock2.png */; };
 		4187A92928F2FD560025AC55 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A92828F2FD560025AC55 /* UILabel+Extension.swift */; };
+		4187A93128F346060025AC55 /* yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A93028F346060025AC55 /* yes.png */; };
 		41B01B1328EF6B6300929E3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1228EF6B6300929E3A /* SearchViewController.swift */; };
 		41B01B1828EF6C1900929E3A /* SearchViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */; };
 		41B01B1A28EF8E7400929E3A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1928EF8E7400929E3A /* InfoViewController.swift */; };
@@ -52,6 +53,7 @@
 		4187A92428F2F0200025AC55 /* orange3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange3.png; path = ../../../images/orange3.png; sourceTree = "<group>"; };
 		4187A92628F2F08D0025AC55 /* clock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock2.png; path = ../../../images/clock2.png; sourceTree = "<group>"; };
 		4187A92828F2FD560025AC55 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		4187A93028F346060025AC55 /* yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yes.png; path = ../../../yes.png; sourceTree = "<group>"; };
 		41B01B1228EF6B6300929E3A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Extension.swift"; sourceTree = "<group>"; };
 		41B01B1928EF8E7400929E3A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				4187A92228F2F01C0025AC55 /* orange2.png */,
 				4187A92428F2F0200025AC55 /* orange3.png */,
 				41D6203128EFEE4A00C0BEA5 /* air1.png */,
+				4187A93028F346060025AC55 /* yes.png */,
 			);
 			path = AnanasProject;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				4187A91D28F2F0000025AC55 /* orange1.png in Resources */,
 				4179EEE428EDEBFC000D5121 /* LaunchScreen.storyboard in Resources */,
 				41D6203228EFEE4A00C0BEA5 /* air1.png in Resources */,
+				4187A93128F346060025AC55 /* yes.png in Resources */,
 				4179EEE128EDEBFC000D5121 /* Assets.xcassets in Resources */,
 				4187A92528F2F0210025AC55 /* orange3.png in Resources */,
 				4179EEDF28EDEBF8000D5121 /* Main.storyboard in Resources */,

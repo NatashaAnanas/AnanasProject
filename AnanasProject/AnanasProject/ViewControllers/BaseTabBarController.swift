@@ -8,10 +8,11 @@
 import UIKit
 /// Базовый TabBarController
 final class BaseTabBarController: UITabBarController {
-
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         viewControllers = [
             createViewController(viewController: BuyViewController(),
                                  titel: "КУПИТЬ",
@@ -45,7 +46,6 @@ final class BaseTabBarController: UITabBarController {
                                          green: 18.0/255,
                                          blue: 18.0/255,
                                          alpha: 1.0)
-        
         return navController
     }
 }
