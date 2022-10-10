@@ -222,7 +222,16 @@ final class SearchViewController: UIViewController {
         actions()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        createNavController()
+    }
+    
     // MARK: - Private Method
+    private func createNavController() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.backgroundColor = .black
+    }
     
     private func createUI() {
         view.backgroundColor = .black

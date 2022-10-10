@@ -240,6 +240,8 @@ final class InfoViewController: UIViewController {
         
         boxImageView.frame = CGRect(x: 30, y: 740, width: 20, height: 20)
         view.addSubview(boxImageView)
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     private func actions() {
