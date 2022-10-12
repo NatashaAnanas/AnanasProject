@@ -6,8 +6,10 @@
 //
 
 import UIKit
-// Загрузк страницы
+/// Загрузк страницы
 class LoadingViewController: UIViewController {
+    
+    // MARK: - Visual Components
     
     private var aiPodsImageView: UIImageView = {
         let image = UIImageView()
@@ -33,14 +35,17 @@ class LoadingViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
-
+    
+    // MARK: - Public Properties
+    private var count = 0
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
     }
-    
-    var count = 0
-    
+
+    // MARK: - Life cycle
     private func createUI() {
         
         view.backgroundColor = .white
@@ -71,7 +76,6 @@ class LoadingViewController: UIViewController {
         loadProgressView.progress += 0.1
         
         guard loadProgressView.progress == 1.0  else { return }
-//        loadProgressView.setProgress(0.0, animated: true)
         let forYouViewController  = ForYouViewController()
         navigationController?.modalPresentationStyle = .fullScreen
         show(forYouViewController, sender: nil)

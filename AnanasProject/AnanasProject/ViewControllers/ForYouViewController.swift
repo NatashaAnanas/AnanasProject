@@ -9,6 +9,8 @@ import UIKit
 /// Контроллер с разделом "Для вас"
 final class ForYouViewController: UIViewController {
     
+    // MARK: - Constant
+    
     private enum Constant {
         static let new = "Вот что нового"
         static let oderSent = "Ваш заказ отправлен"
@@ -28,21 +30,16 @@ final class ForYouViewController: UIViewController {
     }
     
     private struct Const {
-        /// Image height/width for Large NavBar state
         static let ImageSizeForLargeState: CGFloat = 40
-        /// Margin from right anchor of safe area to right anchor of Image
         static let ImageRightMargin: CGFloat = 16
-        /// Margin from bottom anchor of NavBar to bottom anchor of Image for Large NavBar state
         static let ImageBottomMarginForLargeState: CGFloat = 12
-        /// Margin from bottom anchor of NavBar to bottom anchor of Image for Small NavBar state
         static let ImageBottomMarginForSmallState: CGFloat = 6
-        /// Image height/width for Small NavBar state
         static let ImageSizeForSmallState: CGFloat = 32
-        /// Height of NavBar for Small state. Usually it's just 44
         static let NavBarHeightSmallState: CGFloat = 44
-        /// Height of NavBar for Large state. Usually it's just 96.5 but if you have a custom font for the title, please make sure to edit this value since it changes the height for Large state of NavBar
         static let NavBarHeightLargeState: CGFloat = 96.5
     }
+    
+    // MARK: - Visual Components
     
     private lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
@@ -194,7 +191,7 @@ final class ForYouViewController: UIViewController {
         return image
     }()
     
-    private lazy var iconImageView: UIImageView = {
+    lazy var iconImageView: UIImageView = {
         let image = UIImageView()
         image.frame = CGRect(x: 340, y: 40, width: 40, height: 40)
         image.layer.cornerRadius = 20
@@ -205,7 +202,6 @@ final class ForYouViewController: UIViewController {
         image.backgroundColor = .red
         return image
     }()
-// image: UIImage(named: Constant.icon)image: UIImage(named: Constant.icon)
     
     private lazy var iconImageViewNew: UIImageView = {
     let image = UIImageView()
@@ -229,11 +225,6 @@ final class ForYouViewController: UIViewController {
     }
     
     // MARK: - Private Method
-    
-    private func saveToUserDefaults(image: Data) {
-        let userDefaults = UserDefaults.standard
-        userDefaults.setValue(image, forKey: Constant.userDefaultsAvatar)
-    }
     
     private func loadFromUserDefaults() {
         let userDefaults = UserDefaults.standard
@@ -344,15 +335,11 @@ final class ForYouViewController: UIViewController {
         imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true)
     }
-        
-    //    private func safeToUsersDefaults(image: Date) -> UIImage {
-    //        let defaults = UserDefaults.standard
-    //        guard defaults.object(forKey: "icon") != nil else {
-    //            defaults.set(image, forKey: "avatar")
-    //            return
-    //        }
-    //        defaults.set(image, forKey: "avatar")
-    //    }
+    
+    func saveToUserDefaults(image: Data) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.setValue(image, forKey: Constant.userDefaultsAvatar)
+    }
 }
 
 private extension ForYouViewController {
@@ -370,27 +357,6 @@ private extension ForYouViewController {
             let separatorView = makeSeparatorView(yCoordinate: yCoordinateSeparatorView)
             yCoordinateSeparatorView += yCoordinateConstant
             scrollView.addSubview(separatorView)
-        }
-    }
-}
-extension ForYouViewController: UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        guard let image = info[.editedImage] as? UIImage else { return }
-        let avatarImage = image.resizeImage(to: CGSize(width: 40, height: 40))
-        self.iconImageView.image = avatarImage
-        guard let imageData = image.pngData() else { return }
-        saveToUserDefaults(image: imageData)
-        dismiss(animated: true)
-    }
-}
-extension ForYouViewController: UINavigationControllerDelegate {
-}
-
-extension UIImage {
-    func resizeImage(to size: CGSize) -> UIImage {
-        return UIGraphicsImageRenderer(size: size).image {_ in
-            draw(in: CGRect(origin: .zero, size: size))
         }
     }
 }

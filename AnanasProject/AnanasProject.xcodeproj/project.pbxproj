@@ -31,6 +31,8 @@
 		4187A93928F665E40025AC55 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A93828F665E40025AC55 /* PdfViewController.swift */; };
 		4187A93B28F6662E0025AC55 /* SwiftRazrabPrilozhUIKit.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4187A93A28F6662E0025AC55 /* SwiftRazrabPrilozhUIKit.pdf */; };
 		4187A93E28F696160025AC55 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A93D28F696160025AC55 /* LoadingViewController.swift */; };
+		4187A94028F6A0D20025AC55 /* ForYouViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A93F28F6A0D20025AC55 /* ForYouViewController+Extension.swift */; };
+		4187A94228F6A1860025AC55 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A94128F6A1860025AC55 /* UIImage+Extension.swift */; };
 		41B01B1328EF6B6300929E3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1228EF6B6300929E3A /* SearchViewController.swift */; };
 		41B01B1828EF6C1900929E3A /* SearchViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */; };
 		41B01B1A28EF8E7400929E3A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1928EF8E7400929E3A /* InfoViewController.swift */; };
@@ -64,6 +66,8 @@
 		4187A93828F665E40025AC55 /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
 		4187A93A28F6662E0025AC55 /* SwiftRazrabPrilozhUIKit.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = SwiftRazrabPrilozhUIKit.pdf; path = ../../../../Downloads/SwiftRazrabPrilozhUIKit.pdf; sourceTree = "<group>"; };
 		4187A93D28F696160025AC55 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		4187A93F28F6A0D20025AC55 /* ForYouViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForYouViewController+Extension.swift"; sourceTree = "<group>"; };
+		4187A94128F6A1860025AC55 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		41B01B1228EF6B6300929E3A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Extension.swift"; sourceTree = "<group>"; };
 		41B01B1928EF8E7400929E3A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			children = (
 				41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */,
 				4187A92828F2FD560025AC55 /* UILabel+Extension.swift */,
+				4187A93F28F6A0D20025AC55 /* ForYouViewController+Extension.swift */,
+				4187A94128F6A1860025AC55 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -257,6 +263,7 @@
 				4179EEEE28EE0123000D5121 /* BaseTabBarController.swift in Sources */,
 				41B01B1828EF6C1900929E3A /* SearchViewController+Extension.swift in Sources */,
 				4179EEF028EE03F8000D5121 /* ForYouViewController.swift in Sources */,
+				4187A94028F6A0D20025AC55 /* ForYouViewController+Extension.swift in Sources */,
 				41B01B1328EF6B6300929E3A /* SearchViewController.swift in Sources */,
 				41B01B1A28EF8E7400929E3A /* InfoViewController.swift in Sources */,
 				4187A92928F2FD560025AC55 /* UILabel+Extension.swift in Sources */,
@@ -265,6 +272,7 @@
 				4179EEDA28EDEBF8000D5121 /* SceneDelegate.swift in Sources */,
 				4179EEF428EE042D000D5121 /* BagViewControllerThree.swift in Sources */,
 				4187A93528F5760E0025AC55 /* WKWebViewController.swift in Sources */,
+				4187A94228F6A1860025AC55 /* UIImage+Extension.swift in Sources */,
 				4187A93E28F696160025AC55 /* LoadingViewController.swift in Sources */,
 				4187A93928F665E40025AC55 /* PdfViewController.swift in Sources */,
 			);
