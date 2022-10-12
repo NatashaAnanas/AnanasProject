@@ -37,6 +37,7 @@ class LoadingViewController: UIViewController {
     }()
     
     // MARK: - Public Properties
+    
     private var count = 0
     
     // MARK: - Life cycle

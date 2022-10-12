@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/// Расширение для ForYouViewController подписываемся на делегаты
 extension ForYouViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {

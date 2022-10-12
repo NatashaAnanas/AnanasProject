@@ -131,17 +131,33 @@
 		4179EEEC28EE00EC000D5121 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4187A94428F6A2630025AC55 /* FoyYouViewController */,
+				4187A94328F6A23C0025AC55 /* SearchViewController */,
 				4179EEED28EE0123000D5121 /* BaseTabBarController.swift */,
 				4179EEDB28EDEBF8000D5121 /* BuyViewController.swift */,
-				4179EEEF28EE03F8000D5121 /* ForYouViewController.swift */,
-				41B01B1228EF6B6300929E3A /* SearchViewController.swift */,
-				41B01B1928EF8E7400929E3A /* InfoViewController.swift */,
 				4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */,
-				4187A93828F665E40025AC55 /* PdfViewController.swift */,
-				4187A93428F5760E0025AC55 /* WKWebViewController.swift */,
-				4187A93D28F696160025AC55 /* LoadingViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4187A94328F6A23C0025AC55 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				41B01B1228EF6B6300929E3A /* SearchViewController.swift */,
+				41B01B1928EF8E7400929E3A /* InfoViewController.swift */,
+				4187A93428F5760E0025AC55 /* WKWebViewController.swift */,
+				4187A93828F665E40025AC55 /* PdfViewController.swift */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		4187A94428F6A2630025AC55 /* FoyYouViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4187A93D28F696160025AC55 /* LoadingViewController.swift */,
+				4179EEEF28EE03F8000D5121 /* ForYouViewController.swift */,
+			);
+			path = FoyYouViewController;
 			sourceTree = "<group>";
 		};
 		41B01B1628EF6BE700929E3A /* Extension */ = {

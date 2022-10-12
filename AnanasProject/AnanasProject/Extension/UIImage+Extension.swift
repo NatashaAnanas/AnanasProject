@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/// Расширение для UIImage
 extension UIImage {
     func resizeImage(to size: CGSize) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image {_ in

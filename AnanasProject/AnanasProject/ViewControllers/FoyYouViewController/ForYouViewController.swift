@@ -236,6 +236,7 @@ final class ForYouViewController: UIViewController {
     private func createUI() {
         view.backgroundColor = .white
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         appBageImageView.frame = CGRect(x: 30, y: 380, width: 35, height: 35)
         scrollView.addSubview(appBageImageView)
