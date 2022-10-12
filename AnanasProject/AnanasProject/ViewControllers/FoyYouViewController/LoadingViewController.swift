@@ -20,6 +20,7 @@ class LoadingViewController: UIViewController {
     private var aiPodsImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: Constant.air)
+        image.alpha = 0.0
         return image
     }()
     
@@ -61,7 +62,7 @@ class LoadingViewController: UIViewController {
         aiPodsImageView.center = view.center
         view.addSubview(aiPodsImageView)
         
-        loadProgressView.frame = CGRect(x: 0, y: 600, width: 320, height: 31)
+        loadProgressView.frame = CGRect(x: 0, y: 600, width: 270, height: 31)
         loadProgressView.center.x = view.center.x
         view.addSubview(loadProgressView)
         
@@ -69,7 +70,7 @@ class LoadingViewController: UIViewController {
         loadingLabel.center.x = view.center.x
         view.addSubview(loadingLabel)
         
-        loadingTimer = Timer.scheduledTimer(timeInterval: 0.4,
+        loadingTimer = Timer.scheduledTimer(timeInterval: 0.1,
                                              target: self,
                                              selector: #selector(loading),
                                              userInfo: nil,
@@ -81,6 +82,7 @@ class LoadingViewController: UIViewController {
         count += 1
         if 1...9  ~= count {
         loadProgressView.progress += 0.1
+            aiPodsImageView.alpha += 0.1
         
         guard loadProgressView.progress == 1.0  else { return }
         let forYouViewController  = ForYouViewController()
