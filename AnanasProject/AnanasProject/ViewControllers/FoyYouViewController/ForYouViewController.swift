@@ -24,20 +24,27 @@ final class ForYouViewController: UIViewController {
         static let devices = "Ваши устройства"
         static let showAll = "Показать все"
         static let appBage = "app.badge"
-        static let icon = "иконка"
+        static let iconName = "иконка"
         static let air = "air1"
-        static let userDefaultsAvatar = "ava"
+        static let userDefaultsAvatarName = "ava"
+        static let imageSizeForLargeState: CGFloat = 40
+        static let imageRightMargin: CGFloat = 16
+        static let imageBottomMarginForLargeState: CGFloat = 12
+        static let imageBottomMarginForSmallState: CGFloat = 6
+        static let imageSizeForSmallState: CGFloat = 32
+        static let navBarHeightSmallState: CGFloat = 44
+        static let navBarHeightLargeState: CGFloat = 96.5
     }
     
-    private struct Const {
-        static let ImageSizeForLargeState: CGFloat = 40
-        static let ImageRightMargin: CGFloat = 16
-        static let ImageBottomMarginForLargeState: CGFloat = 12
-        static let ImageBottomMarginForSmallState: CGFloat = 6
-        static let ImageSizeForSmallState: CGFloat = 32
-        static let NavBarHeightSmallState: CGFloat = 44
-        static let NavBarHeightLargeState: CGFloat = 96.5
-    }
+//    private struct Const {
+//        static let ImageSizeForLargeState: CGFloat = 40
+//        static let ImageRightMargin: CGFloat = 16
+//        static let ImageBottomMarginForLargeState: CGFloat = 12
+//        static let ImageBottomMarginForSmallState: CGFloat = 6
+//        static let ImageSizeForSmallState: CGFloat = 32
+//        static let NavBarHeightSmallState: CGFloat = 44
+//        static let NavBarHeightLargeState: CGFloat = 96.5
+//    }
     
     // MARK: - Visual Components
     
@@ -193,8 +200,8 @@ final class ForYouViewController: UIViewController {
     
     lazy var iconImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: Constant.icon)
-        image.layer.cornerRadius = Const.ImageSizeForLargeState / 2
+        image.image = UIImage(named: Constant.iconName)
+        image.layer.cornerRadius = Constant.imageSizeForLargeState / 2
         image.clipsToBounds = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(iconImageViewAction))
         image.addGestureRecognizer(tapGestureRecognizer)
@@ -209,6 +216,7 @@ final class ForYouViewController: UIViewController {
         super.viewDidLoad()
         createUI()
         setupUI()
+        settingsView()
         loadFromUserDefaults()
     }
     
@@ -216,12 +224,12 @@ final class ForYouViewController: UIViewController {
     
     private func loadFromUserDefaults() {
         let userDefaults = UserDefaults.standard
-        guard let data = userDefaults.object(forKey: Constant.userDefaultsAvatar) as? Data else { return }
+        guard let data = userDefaults.object(forKey: Constant.userDefaultsAvatarName) as? Data else { return }
         guard let image = UIImage(data: data) else { return }
         iconImageView.image = image
     }
     
-    private func createUI() {
+    private func settingsView() {
         view.backgroundColor = .white
         title = "Для вас"
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
@@ -230,6 +238,9 @@ final class ForYouViewController: UIViewController {
                                                            style: .done,
                                                            target: self,
                                                            action: nil)
+    }
+    
+    private func createUI() {
         
         appBageImageView.frame = CGRect(x: 30, y: 380, width: 35, height: 35)
         scrollView.addSubview(appBageImageView)
@@ -284,34 +295,35 @@ final class ForYouViewController: UIViewController {
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             iconImageView.rightAnchor.constraint(equalTo: navigationBar.rightAnchor,
-                                                 constant: -Const.ImageRightMargin),
+                                                 constant: -Constant.imageRightMargin),
             iconImageView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor,
-                                                  constant: -Const.ImageBottomMarginForLargeState),
-            iconImageView.heightAnchor.constraint(equalToConstant: Const.ImageSizeForLargeState),
+                                                  constant: -Constant.imageBottomMarginForLargeState),
+            iconImageView.heightAnchor.constraint(equalToConstant: Constant.imageSizeForLargeState),
             iconImageView.widthAnchor.constraint(equalTo: iconImageView.heightAnchor)
         ])
     }
     
     private func moveAndResizeImage(for height: CGFloat) {
         let coeff: CGFloat = {
-            let delta = height - Const.NavBarHeightSmallState
-            let heightDifferenceBetweenStates = (Const.NavBarHeightLargeState - Const.NavBarHeightSmallState)
+            let delta = height - Constant.navBarHeightSmallState
+            let heightDifferenceBetweenStates = (Constant.navBarHeightLargeState - Constant.navBarHeightSmallState)
             return delta / heightDifferenceBetweenStates
         }()
         
-        let factor = Const.ImageSizeForSmallState / Const.ImageSizeForLargeState
+        let factor = Constant.imageSizeForSmallState / Constant.imageSizeForLargeState
         
         let scale: CGFloat = {
             let sizeAddendumFactor = coeff * (1.0 - factor)
             return min(1.0, sizeAddendumFactor + factor)
         }()
         
-        let sizeDiff = Const.ImageSizeForLargeState * (1.0 - factor)
+        let sizeDiff = Constant.imageSizeForLargeState * (1.0 - factor)
         
         let yTranslation: CGFloat = {
-            let maxYTranslation = Const.ImageBottomMarginForLargeState - Const.ImageBottomMarginForSmallState + sizeDiff
+            let maxYTranslation =
+            Constant.imageBottomMarginForLargeState - Constant.imageBottomMarginForSmallState + sizeDiff
             return max(0, min(maxYTranslation,
-                              (maxYTranslation - coeff * (Const.ImageBottomMarginForSmallState + sizeDiff))))
+                              (maxYTranslation - coeff * (Constant.imageBottomMarginForSmallState + sizeDiff))))
         }()
         
         let xTranslation = max(0, sizeDiff - coeff * sizeDiff)
@@ -330,7 +342,7 @@ final class ForYouViewController: UIViewController {
     
     func saveUserDefaults(image: Data) {
         let userDefaults = UserDefaults.standard
-        userDefaults.setValue(image, forKey: Constant.userDefaultsAvatar)
+        userDefaults.setValue(image, forKey: Constant.userDefaultsAvatarName)
     }
 }
 

@@ -26,6 +26,7 @@ final class InfoViewController: UIViewController {
         static let orangeMacUrl = "https://re-store.ru/catalog/MFMBPRO1320OR/"
         static let airPodsUrl = "https://re-store.ru/catalog/MLWK3/"
         static let appStoreUrl = "https://re-store.ru"
+        static let URLs = [Constant.blackMacUrl, Constant.clockUrl, Constant.orangeMacUrl, Constant.airPodsUrl]
         
     }
     
@@ -292,19 +293,8 @@ final class InfoViewController: UIViewController {
     @objc private func imageScrollViewAction(sender: UIScrollView) {
         
         let wkController = WKWebViewController()
+        wkController.url = Constant.URLs[imageScrollView.tag]
         
-        switch imageScrollView.tag {
-        case 0:
-            wkController.url = Constant.blackMacUrl
-        case 1:
-            wkController.url = Constant.clockUrl
-        case 2:
-            wkController.url = Constant.orangeMacUrl
-        case 3:
-            wkController.url = Constant.airPodsUrl
-        default:
-            wkController.url = Constant.appStoreUrl
-        }
         navigationController?.modalPresentationStyle = .pageSheet
         present(wkController, animated: true)
     }

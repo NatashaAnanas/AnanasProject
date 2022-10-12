@@ -13,7 +13,7 @@ final class PdfViewController: UIViewController {
     
     private enum Constant {
         static let pdfName = "SwiftRazrabPrilozhUIKit"
-        static let pdf = "pdf"
+        static let format = "pdf"
     }
 
     // MARK: - Visual Components
@@ -33,7 +33,7 @@ final class PdfViewController: UIViewController {
         view.addSubview(wkWebView)
         
         guard let pdfUrl = Bundle.main.url(forResource: Constant.pdfName,
-                                           withExtension: Constant.pdf) else { return }
+                                           withExtension: Constant.format) else { return }
         
         let request = URLRequest(url: pdfUrl)
         wkWebView.loadRequest(request)

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import WebKit
 /// Информация о товаре из сети
 final class WKWebViewController: UIViewController {
@@ -45,26 +46,20 @@ final class WKWebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
+        createBarButtonItem()
+        getURL()
         addConstraints()
     }
     
     // MARK: - Private Method
-    private func createUI() {
-        wkWebView.navigationDelegate = self
-        
-        wkWebView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(wkWebView)
-        
+    
+    private func getURL() {
         guard let myURL = URL(string: url) else { return }
         let request = URLRequest(url: myURL)
         wkWebView.load(request)
-        
-        toolBar.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(toolBar)
-        
-        loadProgressView.frame = CGRect(x: 0, y: 10, width: 250, height: 32)
-        loadProgressView.center.x = toolBar.center.x
-        toolBar.addSubview(loadProgressView)
+    }
+    
+    private func createBarButtonItem() {
         
         let backButtonItem = UIBarButtonItem(image: UIImage(systemName: Constant.back),
                                              style: .done,
@@ -85,6 +80,20 @@ final class WKWebViewController: UIViewController {
                                               action: #selector(shareButtonItemAction))
         
         toolBar.items = [backButtonItem, forwardButtonItem, load, refreshButtonItem, shareButtonItem]
+        toolBar.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(toolBar)
+    }
+    
+    private func createUI() {
+        
+        wkWebView.navigationDelegate = self
+        
+        wkWebView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(wkWebView)
+        
+        loadProgressView.frame = CGRect(x: 0, y: 10, width: 250, height: 32)
+        loadProgressView.center.x = toolBar.center.x
+        toolBar.addSubview(loadProgressView)
         
         loadingTimer = Timer.scheduledTimer(timeInterval: 0.01,
                                              target: self,
@@ -149,7 +158,6 @@ final class WKWebViewController: UIViewController {
 extension WKWebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("HELLO")
         loadProgressView.progress += 1.0
     }
 }
