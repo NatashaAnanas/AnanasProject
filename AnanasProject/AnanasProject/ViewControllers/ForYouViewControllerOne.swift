@@ -1,13 +1,13 @@
 //
-//  ViewControllerThree.swift
+//  FotYouViewControllerOne.swift
 //  AnanasProject
 //
 //  Created by Анастасия Козлова on 05.10.2022.
 //
 
 import UIKit
-/// Контроллер с разделом "Корзина"
-final class BagViewController: UIViewController {
+/// Контроллер с разделом "Для вас"
+final class ForYouViewControllerOne: UIViewController {
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -16,7 +16,8 @@ final class BagViewController: UIViewController {
     }
     
     // MARK: - Private Method
+    
     private func createUI() {
-        view.backgroundColor = .green
+        view.backgroundColor = .systemMint
     }
 }
