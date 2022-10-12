@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 /// Информация о товаре из сети
 final class WKWebViewController: UIViewController {
     
@@ -17,12 +18,9 @@ final class WKWebViewController: UIViewController {
     
     // MARK: - Visual Components
     
-    let wkWebView = UIWebView()
+    let wkWebView = WKWebView()
     
-    private lazy var activityViewController = UIActivityViewController(activityItems: ["\(self.url)"],
-                                                                       applicationActivities: nil)
-    
-    private let loadProgressView: UIProgressView = {
+    let loadProgressView: UIProgressView = {
         let progress = UIProgressView()
         progress.progressTintColor = .systemBlue
         progress.tintColor = .tertiaryLabel
@@ -35,7 +33,9 @@ final class WKWebViewController: UIViewController {
         toolBar.barTintColor = .darkGray
         return toolBar
     }()
-
+    
+    private lazy var activityViewController = UIActivityViewController(activityItems: ["\(self.url)"],
+                                                                       applicationActivities: nil)
     private var loadingTimer: Timer?
     
     // MARK: - Public Properties
@@ -50,13 +50,14 @@ final class WKWebViewController: UIViewController {
     
     // MARK: - Private Method
     private func createUI() {
+        wkWebView.navigationDelegate = self
         
         wkWebView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(wkWebView)
         
         guard let myURL = URL(string: url) else { return }
         let request = URLRequest(url: myURL)
-        wkWebView.loadRequest(request)
+        wkWebView.load(request)
         
         toolBar.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(toolBar)
@@ -85,7 +86,7 @@ final class WKWebViewController: UIViewController {
         
         toolBar.items = [backButtonItem, forwardButtonItem, load, refreshButtonItem, shareButtonItem]
         
-        loadingTimer = Timer.scheduledTimer(timeInterval: 1,
+        loadingTimer = Timer.scheduledTimer(timeInterval: 0.01,
                                              target: self,
                                              selector: #selector(loadProgressAction),
                                              userInfo: nil,
@@ -116,26 +117,39 @@ final class WKWebViewController: UIViewController {
     }
     
     @objc private func loadProgressAction() {
-        loadProgressView.progress += 0.1
+        
+        loadProgressView.progress += 0.0005
     }
     
     @objc private func backButtonItemAction() {
         loadProgressView.setProgress(0.0, animated: false)
         guard wkWebView.canGoBack else { return }
-        loadProgressView.progress += 0.1
+        
+        loadProgressView.progress += 0.0005
         wkWebView.goBack()
     }
     
     @objc private func forwardButtonItemAction() {
+        
         loadProgressView.setProgress(0.0, animated: false)
         guard wkWebView.canGoForward else { return }
-        loadProgressView.progress += 0.1
+        
+        loadProgressView.progress += 0.0005
         wkWebView.goForward()
     }
-                                                
+    
     @objc func refreshButtonItemAction() {
+        
         loadProgressView.setProgress(0.0, animated: false)
-        loadProgressView.progress += 0.1
+        loadProgressView.progress += 0.0005
         wkWebView.reload()
+    }
+}
+
+extension WKWebViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("HELLO")
+        loadProgressView.progress += 1.0
     }
 }
