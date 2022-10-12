@@ -17,11 +17,11 @@ final class BaseTabBarController: UITabBarController {
             createViewController(viewController: BuyViewController(),
                                  titel: "КУПИТЬ",
                                  image: "laptopcomputer.and.iphone"),
-            createViewController(viewController: LoadingViewController(),
+            createViewController(viewController: ForYouViewControllerOne(),
                                  titel: "ДЛЯ ВАС", image: "person.circle"),
             createViewController(viewController: SearchViewController(),
                                  titel: "ПОИСК", image: "magnifyingglass"),
-            createViewController(viewController: BagViewController(),
+            createViewController(viewController: BagViewControllerThree(),
                                  titel: "КОРЗИНА",
                                  image: "bag")
         ]
