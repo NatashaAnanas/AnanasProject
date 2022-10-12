@@ -261,16 +261,24 @@ final class InfoViewController: UIViewController {
     
     private func actions() {
         
-        blackButton.addTarget(self, action: #selector(chouseColorAction(sender: )), for: .touchUpInside)
+        blackButton.addTarget(self,
+                              action: #selector(chouseColorAction(sender: )),
+                              for: .touchUpInside)
         
-        whiteButton.addTarget(self, action: #selector(chouseColorAction(sender: )), for: .touchUpInside)
+        whiteButton.addTarget(self,
+                              action: #selector(chouseColorAction(sender: )),
+                              for: .touchUpInside)
         
         imageScrollView.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                     action: #selector(imageScrollViewAction(sender: ))))
-        pdfButton.addTarget(self, action: #selector(pdfButtonAction(sender: )), for: .touchUpInside)
+        
+        pdfButton.addTarget(self,
+                            action: #selector(pdfButtonAction(sender: )),
+                            for: .touchUpInside)
     }
     
     private func addItems() {
+        
         navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(systemName: Constant.heart),
                                                               style: .done,
                                                               target: self,

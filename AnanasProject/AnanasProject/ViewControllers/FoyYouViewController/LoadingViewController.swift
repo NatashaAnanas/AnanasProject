@@ -9,11 +9,17 @@ import UIKit
 /// Загрузк страницы
 class LoadingViewController: UIViewController {
     
+    // MARK: - Constant
+    
+    private enum Constant {
+        static let air = "air1"
+        static let loading = "Loading..."
+    }
     // MARK: - Visual Components
     
     private var aiPodsImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "air1")
+        image.image = UIImage(named: Constant.air)
         return image
     }()
     
@@ -29,7 +35,7 @@ class LoadingViewController: UIViewController {
     
     private let loadingLabel: UILabel = {
         let label = UILabel()
-        label.text = "Loading..."
+        label.text = Constant.loading
         label.font = .boldSystemFont(ofSize: 25)
         label.textColor = .black
         label.textAlignment = .center

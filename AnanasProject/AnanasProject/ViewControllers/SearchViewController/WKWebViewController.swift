@@ -19,13 +19,14 @@ final class WKWebViewController: UIViewController {
     
     let wkWebView = UIWebView()
     
-    var activityViewController = UIActivityViewController(activityItems: ["Ссылка"], applicationActivities: nil)
+    private lazy var activityViewController = UIActivityViewController(activityItems: ["\(self.url)"],
+                                                                       applicationActivities: nil)
     
     private let loadProgressView: UIProgressView = {
         let progress = UIProgressView()
         progress.progressTintColor = .systemBlue
         progress.tintColor = .tertiaryLabel
-        progress.setProgress(0.1, animated: true)
+        progress.setProgress(0.0, animated: false)
         return progress
     }()
     
@@ -38,7 +39,6 @@ final class WKWebViewController: UIViewController {
     private var loadingTimer: Timer?
     
     // MARK: - Public Properties
-    
     var url = String()
     
     // MARK: - Life cycle
@@ -120,16 +120,22 @@ final class WKWebViewController: UIViewController {
     }
     
     @objc private func backButtonItemAction() {
+        loadProgressView.setProgress(0.0, animated: false)
         guard wkWebView.canGoBack else { return }
+        loadProgressView.progress += 0.1
         wkWebView.goBack()
     }
     
     @objc private func forwardButtonItemAction() {
+        loadProgressView.setProgress(0.0, animated: false)
         guard wkWebView.canGoForward else { return }
+        loadProgressView.progress += 0.1
         wkWebView.goForward()
     }
                                                 
     @objc func refreshButtonItemAction() {
+        loadProgressView.setProgress(0.0, animated: false)
+        loadProgressView.progress += 0.1
         wkWebView.reload()
     }
 }
