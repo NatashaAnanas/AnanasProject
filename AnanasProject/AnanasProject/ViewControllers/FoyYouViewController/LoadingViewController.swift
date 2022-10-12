@@ -55,15 +55,15 @@ class LoadingViewController: UIViewController {
         aiPodsImageView.center = view.center
         view.addSubview(aiPodsImageView)
         
-        loadProgressView.frame = CGRect(x: 0, y: 600, width: 300, height: 31)
+        loadProgressView.frame = CGRect(x: 0, y: 600, width: 320, height: 31)
         loadProgressView.center.x = view.center.x
         view.addSubview(loadProgressView)
         
-        loadingLabel.frame = CGRect(x: 0, y: 550, width: 100, height: 30)
-        loadProgressView.center.x = view.center.x
-        view.addSubview(loadProgressView)
+        loadingLabel.frame = CGRect(x: 0, y: 550, width: 150, height: 30)
+        loadingLabel.center.x = view.center.x
+        view.addSubview(loadingLabel)
         
-        loadingTimer = Timer.scheduledTimer(timeInterval: 0.1,
+        loadingTimer = Timer.scheduledTimer(timeInterval: 0.4,
                                              target: self,
                                              selector: #selector(loading),
                                              userInfo: nil,

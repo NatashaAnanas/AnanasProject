@@ -21,7 +21,7 @@ final class BaseTabBarController: UITabBarController {
                                  titel: "ДЛЯ ВАС", image: "person.circle"),
             createViewController(viewController: SearchViewController(),
                                  titel: "ПОИСК", image: "magnifyingglass"),
-            createViewController(viewController: BagViewControllerThree(),
+            createViewController(viewController: BagViewController(),
                                  titel: "КОРЗИНА",
                                  image: "bag")
         ]

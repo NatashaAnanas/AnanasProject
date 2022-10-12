@@ -7,7 +7,7 @@
 
 import UIKit
 /// Контроллер с разделом "Корзина"
-final class BagViewControllerThree: UIViewController {
+final class BagViewController: UIViewController {
     
     // MARK: - Life cycle
     override func viewDidLoad() {

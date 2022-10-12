@@ -26,7 +26,7 @@ final class ForYouViewController: UIViewController {
         static let appBage = "app.badge"
         static let icon = "иконка"
         static let air = "air1"
-        static let userDefaultsAvatar = "avatar"
+        static let userDefaultsAvatar = "ava"
     }
     
     private struct Const {
@@ -193,25 +193,13 @@ final class ForYouViewController: UIViewController {
     
     lazy var iconImageView: UIImageView = {
         let image = UIImageView()
-        image.frame = CGRect(x: 340, y: 40, width: 40, height: 40)
-        image.layer.cornerRadius = 20
+        image.image = UIImage(named: Constant.icon)
+        image.layer.cornerRadius = Const.ImageSizeForLargeState / 2
         image.clipsToBounds = true
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageChoiceAction))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(iconImageViewAction))
         image.addGestureRecognizer(tapGestureRecognizer)
         image.isUserInteractionEnabled = true
-        image.backgroundColor = .red
         return image
-    }()
-    
-    private lazy var iconImageViewNew: UIImageView = {
-    let image = UIImageView()
-    image.frame = CGRect(x: 340, y: 40, width: 40, height: 40)
-    image.layer.cornerRadius = 20
-    image.clipsToBounds = true
-    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageChoiceAction))
-    image.addGestureRecognizer(tapGestureRecognizer)
-    image.isUserInteractionEnabled = true
-    return image
     }()
     
     private lazy var createSeparator = makeSeparatorView(yCoordinate: 0)
@@ -235,8 +223,13 @@ final class ForYouViewController: UIViewController {
     
     private func createUI() {
         view.backgroundColor = .white
+        title = "Для вас"
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "",
+                                                           style: .done,
+                                                           target: self,
+                                                           action: nil)
         
         appBageImageView.frame = CGRect(x: 30, y: 380, width: 35, height: 35)
         scrollView.addSubview(appBageImageView)
@@ -288,8 +281,6 @@ final class ForYouViewController: UIViewController {
         
         guard let navigationBar = self.navigationController?.navigationBar else { return }
         navigationBar.addSubview(iconImageView)
-        iconImageView.layer.cornerRadius = Const.ImageSizeForLargeState / 2
-        iconImageView.clipsToBounds = true
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             iconImageView.rightAnchor.constraint(equalTo: navigationBar.rightAnchor,
@@ -330,14 +321,14 @@ final class ForYouViewController: UIViewController {
             .translatedBy(x: xTranslation, y: yTranslation)
     }
     
-    @objc private func imageChoiceAction() {
+    @objc private func iconImageViewAction() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true)
     }
     
-    func saveToUserDefaults(image: Data) {
+    func saveUserDefaults(image: Data) {
         let userDefaults = UserDefaults.standard
         userDefaults.setValue(image, forKey: Constant.userDefaultsAvatar)
     }

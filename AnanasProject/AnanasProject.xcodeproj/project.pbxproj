@@ -15,7 +15,7 @@
 		4179EEE428EDEBFC000D5121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4179EEE228EDEBFC000D5121 /* LaunchScreen.storyboard */; };
 		4179EEEE28EE0123000D5121 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEED28EE0123000D5121 /* BaseTabBarController.swift */; };
 		4179EEF028EE03F8000D5121 /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEEF28EE03F8000D5121 /* ForYouViewController.swift */; };
-		4179EEF428EE042D000D5121 /* BagViewControllerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */; };
+		4179EEF428EE042D000D5121 /* BagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEF328EE042D000D5121 /* BagViewController.swift */; };
 		4187A91928F2EFF10025AC55 /* black3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A91828F2EFF10025AC55 /* black3.png */; };
 		4187A91B28F2EFF80025AC55 /* black2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A91A28F2EFF80025AC55 /* black2.png */; };
 		4187A91D28F2F0000025AC55 /* orange1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A91C28F2F0000025AC55 /* orange1.png */; };
@@ -32,7 +32,6 @@
 		4187A93B28F6662E0025AC55 /* SwiftRazrabPrilozhUIKit.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4187A93A28F6662E0025AC55 /* SwiftRazrabPrilozhUIKit.pdf */; };
 		4187A93E28F696160025AC55 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A93D28F696160025AC55 /* LoadingViewController.swift */; };
 		4187A94028F6A0D20025AC55 /* ForYouViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A93F28F6A0D20025AC55 /* ForYouViewController+Extension.swift */; };
-		4187A94228F6A1860025AC55 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A94128F6A1860025AC55 /* UIImage+Extension.swift */; };
 		41B01B1328EF6B6300929E3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1228EF6B6300929E3A /* SearchViewController.swift */; };
 		41B01B1828EF6C1900929E3A /* SearchViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */; };
 		41B01B1A28EF8E7400929E3A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1928EF8E7400929E3A /* InfoViewController.swift */; };
@@ -50,7 +49,7 @@
 		4179EEE528EDEBFC000D5121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4179EEED28EE0123000D5121 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		4179EEEF28EE03F8000D5121 /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
-		4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewControllerThree.swift; sourceTree = "<group>"; };
+		4179EEF328EE042D000D5121 /* BagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
 		4187A91828F2EFF10025AC55 /* black3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black3.png; path = ../../../images/black3.png; sourceTree = "<group>"; };
 		4187A91A28F2EFF80025AC55 /* black2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black2.png; path = ../../../images/black2.png; sourceTree = "<group>"; };
 		4187A91C28F2F0000025AC55 /* orange1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange1.png; path = ../../../images/orange1.png; sourceTree = "<group>"; };
@@ -67,7 +66,6 @@
 		4187A93A28F6662E0025AC55 /* SwiftRazrabPrilozhUIKit.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = SwiftRazrabPrilozhUIKit.pdf; path = ../../../../Downloads/SwiftRazrabPrilozhUIKit.pdf; sourceTree = "<group>"; };
 		4187A93D28F696160025AC55 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		4187A93F28F6A0D20025AC55 /* ForYouViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForYouViewController+Extension.swift"; sourceTree = "<group>"; };
-		4187A94128F6A1860025AC55 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		41B01B1228EF6B6300929E3A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Extension.swift"; sourceTree = "<group>"; };
 		41B01B1928EF8E7400929E3A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +133,7 @@
 				4187A94328F6A23C0025AC55 /* SearchViewController */,
 				4179EEED28EE0123000D5121 /* BaseTabBarController.swift */,
 				4179EEDB28EDEBF8000D5121 /* BuyViewController.swift */,
-				4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */,
+				4179EEF328EE042D000D5121 /* BagViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -166,7 +164,6 @@
 				41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */,
 				4187A92828F2FD560025AC55 /* UILabel+Extension.swift */,
 				4187A93F28F6A0D20025AC55 /* ForYouViewController+Extension.swift */,
-				4187A94128F6A1860025AC55 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -286,9 +283,8 @@
 				4179EEDC28EDEBF8000D5121 /* BuyViewController.swift in Sources */,
 				4179EED828EDEBF8000D5121 /* AppDelegate.swift in Sources */,
 				4179EEDA28EDEBF8000D5121 /* SceneDelegate.swift in Sources */,
-				4179EEF428EE042D000D5121 /* BagViewControllerThree.swift in Sources */,
+				4179EEF428EE042D000D5121 /* BagViewController.swift in Sources */,
 				4187A93528F5760E0025AC55 /* WKWebViewController.swift in Sources */,
-				4187A94228F6A1860025AC55 /* UIImage+Extension.swift in Sources */,
 				4187A93E28F696160025AC55 /* LoadingViewController.swift in Sources */,
 				4187A93928F665E40025AC55 /* PdfViewController.swift in Sources */,
 			);
