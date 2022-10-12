@@ -17,7 +17,7 @@ final class BaseTabBarController: UITabBarController {
             createViewController(viewController: BuyViewController(),
                                  titel: "КУПИТЬ",
                                  image: "laptopcomputer.and.iphone"),
-            createViewController(viewController: ForYouViewControllerOne(),
+            createViewController(viewController: LoadingViewController(),
                                  titel: "ДЛЯ ВАС", image: "person.circle"),
             createViewController(viewController: SearchViewController(),
                                  titel: "ПОИСК", image: "magnifyingglass"),

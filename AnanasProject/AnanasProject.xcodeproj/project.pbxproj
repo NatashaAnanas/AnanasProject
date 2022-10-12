@@ -14,7 +14,7 @@
 		4179EEE128EDEBFC000D5121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4179EEE028EDEBFC000D5121 /* Assets.xcassets */; };
 		4179EEE428EDEBFC000D5121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4179EEE228EDEBFC000D5121 /* LaunchScreen.storyboard */; };
 		4179EEEE28EE0123000D5121 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEED28EE0123000D5121 /* BaseTabBarController.swift */; };
-		4179EEF028EE03F8000D5121 /* ForYouViewControllerOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEEF28EE03F8000D5121 /* ForYouViewControllerOne.swift */; };
+		4179EEF028EE03F8000D5121 /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEEF28EE03F8000D5121 /* ForYouViewController.swift */; };
 		4179EEF428EE042D000D5121 /* BagViewControllerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */; };
 		4187A91928F2EFF10025AC55 /* black3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A91828F2EFF10025AC55 /* black3.png */; };
 		4187A91B28F2EFF80025AC55 /* black2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A91A28F2EFF80025AC55 /* black2.png */; };
@@ -26,6 +26,11 @@
 		4187A92728F2F08D0025AC55 /* clock2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A92628F2F08D0025AC55 /* clock2.png */; };
 		4187A92928F2FD560025AC55 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A92828F2FD560025AC55 /* UILabel+Extension.swift */; };
 		4187A93128F346060025AC55 /* yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A93028F346060025AC55 /* yes.png */; };
+		4187A93528F5760E0025AC55 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A93428F5760E0025AC55 /* WKWebViewController.swift */; };
+		4187A93728F662210025AC55 /* иконка.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4187A93628F662210025AC55 /* иконка.jpeg */; };
+		4187A93928F665E40025AC55 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A93828F665E40025AC55 /* PdfViewController.swift */; };
+		4187A93B28F6662E0025AC55 /* SwiftRazrabPrilozhUIKit.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4187A93A28F6662E0025AC55 /* SwiftRazrabPrilozhUIKit.pdf */; };
+		4187A93E28F696160025AC55 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A93D28F696160025AC55 /* LoadingViewController.swift */; };
 		41B01B1328EF6B6300929E3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1228EF6B6300929E3A /* SearchViewController.swift */; };
 		41B01B1828EF6C1900929E3A /* SearchViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */; };
 		41B01B1A28EF8E7400929E3A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B01B1928EF8E7400929E3A /* InfoViewController.swift */; };
@@ -42,7 +47,7 @@
 		4179EEE328EDEBFC000D5121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4179EEE528EDEBFC000D5121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4179EEED28EE0123000D5121 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		4179EEEF28EE03F8000D5121 /* ForYouViewControllerOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewControllerOne.swift; sourceTree = "<group>"; };
+		4179EEEF28EE03F8000D5121 /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewControllerThree.swift; sourceTree = "<group>"; };
 		4187A91828F2EFF10025AC55 /* black3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black3.png; path = ../../../images/black3.png; sourceTree = "<group>"; };
 		4187A91A28F2EFF80025AC55 /* black2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black2.png; path = ../../../images/black2.png; sourceTree = "<group>"; };
@@ -54,6 +59,11 @@
 		4187A92628F2F08D0025AC55 /* clock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock2.png; path = ../../../images/clock2.png; sourceTree = "<group>"; };
 		4187A92828F2FD560025AC55 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		4187A93028F346060025AC55 /* yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yes.png; path = ../../../yes.png; sourceTree = "<group>"; };
+		4187A93428F5760E0025AC55 /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
+		4187A93628F662210025AC55 /* иконка.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "иконка.jpeg"; path = "../../../Скрины/иконка.jpeg"; sourceTree = "<group>"; };
+		4187A93828F665E40025AC55 /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
+		4187A93A28F6662E0025AC55 /* SwiftRazrabPrilozhUIKit.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = SwiftRazrabPrilozhUIKit.pdf; path = ../../../../Downloads/SwiftRazrabPrilozhUIKit.pdf; sourceTree = "<group>"; };
+		4187A93D28F696160025AC55 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		41B01B1228EF6B6300929E3A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Extension.swift"; sourceTree = "<group>"; };
 		41B01B1928EF8E7400929E3A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +118,8 @@
 				4187A92428F2F0200025AC55 /* orange3.png */,
 				41D6203128EFEE4A00C0BEA5 /* air1.png */,
 				4187A93028F346060025AC55 /* yes.png */,
+				4187A93628F662210025AC55 /* иконка.jpeg */,
+				4187A93A28F6662E0025AC55 /* SwiftRazrabPrilozhUIKit.pdf */,
 			);
 			path = AnanasProject;
 			sourceTree = "<group>";
@@ -117,10 +129,13 @@
 			children = (
 				4179EEED28EE0123000D5121 /* BaseTabBarController.swift */,
 				4179EEDB28EDEBF8000D5121 /* BuyViewController.swift */,
-				4179EEEF28EE03F8000D5121 /* ForYouViewControllerOne.swift */,
+				4179EEEF28EE03F8000D5121 /* ForYouViewController.swift */,
 				41B01B1228EF6B6300929E3A /* SearchViewController.swift */,
 				41B01B1928EF8E7400929E3A /* InfoViewController.swift */,
 				4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */,
+				4187A93828F665E40025AC55 /* PdfViewController.swift */,
+				4187A93428F5760E0025AC55 /* WKWebViewController.swift */,
+				4187A93D28F696160025AC55 /* LoadingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -193,8 +208,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4187A93728F662210025AC55 /* иконка.jpeg in Resources */,
 				4187A92328F2F01C0025AC55 /* orange2.png in Resources */,
 				4187A91D28F2F0000025AC55 /* orange1.png in Resources */,
+				4187A93B28F6662E0025AC55 /* SwiftRazrabPrilozhUIKit.pdf in Resources */,
 				4179EEE428EDEBFC000D5121 /* LaunchScreen.storyboard in Resources */,
 				41D6203228EFEE4A00C0BEA5 /* air1.png in Resources */,
 				4187A93128F346060025AC55 /* yes.png in Resources */,
@@ -239,7 +256,7 @@
 			files = (
 				4179EEEE28EE0123000D5121 /* BaseTabBarController.swift in Sources */,
 				41B01B1828EF6C1900929E3A /* SearchViewController+Extension.swift in Sources */,
-				4179EEF028EE03F8000D5121 /* ForYouViewControllerOne.swift in Sources */,
+				4179EEF028EE03F8000D5121 /* ForYouViewController.swift in Sources */,
 				41B01B1328EF6B6300929E3A /* SearchViewController.swift in Sources */,
 				41B01B1A28EF8E7400929E3A /* InfoViewController.swift in Sources */,
 				4187A92928F2FD560025AC55 /* UILabel+Extension.swift in Sources */,
@@ -247,6 +264,9 @@
 				4179EED828EDEBF8000D5121 /* AppDelegate.swift in Sources */,
 				4179EEDA28EDEBF8000D5121 /* SceneDelegate.swift in Sources */,
 				4179EEF428EE042D000D5121 /* BagViewControllerThree.swift in Sources */,
+				4187A93528F5760E0025AC55 /* WKWebViewController.swift in Sources */,
+				4187A93E28F696160025AC55 /* LoadingViewController.swift in Sources */,
+				4187A93928F665E40025AC55 /* PdfViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

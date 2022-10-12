@@ -326,12 +326,14 @@ final class SearchViewController: UIViewController {
             infoVC.thirdImageView.image = UIImage(named: Constants.macBlackImageName[2])
             infoVC.smallInfoLabel.text = macBlackLabel.text
             infoVC.count = Constants.macBlackImageName.count
+            infoVC.imageScrollView.tag = 0
         case 1:
             infoVC.infoLabel.text = clockLabel.text
             infoVC.firstImageView.image = UIImage(named: Constants.clockImageName.first ?? "")
             infoVC.secondImageView.image = UIImage(named: Constants.clockImageName.last ?? "")
             infoVC.smallInfoLabel.text = clockLabel.text
             infoVC.count = Constants.clockImageName.count
+            infoVC.imageScrollView.tag = 1
         case 2:
             infoVC.infoLabel.text = macOrangeLabel.text
             infoVC.firstImageView.image = UIImage(named: Constants.macOrangeImageName.first ?? "")
@@ -339,11 +341,13 @@ final class SearchViewController: UIViewController {
             infoVC.thirdImageView.image = UIImage(named: Constants.macOrangeImageName.last ?? "")
             infoVC.smallInfoLabel.text = macOrangeLabel.text
             infoVC.count = Constants.macOrangeImageName.count
+            infoVC.imageScrollView.tag = 2
         case 3:
             infoVC.infoLabel.text = airpodsLabel.text
             infoVC.firstImageView.image = UIImage(named: Constants.airpodsImageName.first ?? "")
             infoVC.smallInfoLabel.text = airpodsLabel.text
             infoVC.count = Constants.airpodsImageName.count
+            infoVC.imageScrollView.tag = 3
         default:
             break
         }
