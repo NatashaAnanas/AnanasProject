@@ -14,7 +14,7 @@
 		4179EEE128EDEBFC000D5121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4179EEE028EDEBFC000D5121 /* Assets.xcassets */; };
 		4179EEE428EDEBFC000D5121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4179EEE228EDEBFC000D5121 /* LaunchScreen.storyboard */; };
 		4179EEEE28EE0123000D5121 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEED28EE0123000D5121 /* BaseTabBarController.swift */; };
-		4179EEF028EE03F8000D5121 /* ForYouViewControllerOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEEF28EE03F8000D5121 /* ForYouViewControllerOne.swift */; };
+		4179EEF028EE03F8000D5121 /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEEF28EE03F8000D5121 /* ForYouViewController.swift */; };
 		4179EEF428EE042D000D5121 /* BagViewControllerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */; };
 		4187A91928F2EFF10025AC55 /* black3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A91828F2EFF10025AC55 /* black3.png */; };
 		4187A91B28F2EFF80025AC55 /* black2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A91A28F2EFF80025AC55 /* black2.png */; };
@@ -43,7 +43,7 @@
 		4179EEE328EDEBFC000D5121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4179EEE528EDEBFC000D5121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4179EEED28EE0123000D5121 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		4179EEEF28EE03F8000D5121 /* ForYouViewControllerOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewControllerOne.swift; sourceTree = "<group>"; };
+		4179EEEF28EE03F8000D5121 /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewControllerThree.swift; sourceTree = "<group>"; };
 		4187A91828F2EFF10025AC55 /* black3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black3.png; path = ../../../images/black3.png; sourceTree = "<group>"; };
 		4187A91A28F2EFF80025AC55 /* black2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black2.png; path = ../../../images/black2.png; sourceTree = "<group>"; };
@@ -118,13 +118,29 @@
 			isa = PBXGroup;
 			children = (
 				4179EEED28EE0123000D5121 /* BaseTabBarController.swift */,
+				4187A99628F8B0300025AC55 /* ForYouViewController */,
+				4187A99528F8AFE40025AC55 /* SearchViewConteroller */,
 				4179EEDB28EDEBF8000D5121 /* BuyViewController.swift */,
-				4179EEEF28EE03F8000D5121 /* ForYouViewControllerOne.swift */,
-				41B01B1228EF6B6300929E3A /* SearchViewController.swift */,
-				41B01B1928EF8E7400929E3A /* InfoViewController.swift */,
 				4179EEF328EE042D000D5121 /* BagViewControllerThree.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4187A99528F8AFE40025AC55 /* SearchViewConteroller */ = {
+			isa = PBXGroup;
+			children = (
+				41B01B1228EF6B6300929E3A /* SearchViewController.swift */,
+				41B01B1928EF8E7400929E3A /* InfoViewController.swift */,
+			);
+			path = SearchViewConteroller;
+			sourceTree = "<group>";
+		};
+		4187A99628F8B0300025AC55 /* ForYouViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4179EEEF28EE03F8000D5121 /* ForYouViewController.swift */,
+			);
+			path = ForYouViewController;
 			sourceTree = "<group>";
 		};
 		41B01B1628EF6BE700929E3A /* Extension */ = {
@@ -243,7 +259,7 @@
 				4187A99428F8AF050025AC55 /* ForYouViewController+Extension.swift in Sources */,
 				4179EEEE28EE0123000D5121 /* BaseTabBarController.swift in Sources */,
 				41B01B1828EF6C1900929E3A /* SearchViewController+Extension.swift in Sources */,
-				4179EEF028EE03F8000D5121 /* ForYouViewControllerOne.swift in Sources */,
+				4179EEF028EE03F8000D5121 /* ForYouViewController.swift in Sources */,
 				41B01B1328EF6B6300929E3A /* SearchViewController.swift in Sources */,
 				41B01B1A28EF8E7400929E3A /* InfoViewController.swift in Sources */,
 				4187A92928F2FD560025AC55 /* UILabel+Extension.swift in Sources */,

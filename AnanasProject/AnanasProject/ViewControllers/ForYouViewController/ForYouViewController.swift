@@ -7,7 +7,7 @@
 
 import UIKit
 /// Контроллер с разделом "Для вас"
-final class ForYouViewControllerOne: UIViewController {
+final class ForYouViewController: UIViewController {
     
     // MARK: - Life cycle
     override func viewDidLoad() {
