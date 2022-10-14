@@ -21,12 +21,19 @@ final class InfoViewController: UIViewController {
         static let yes = "yes"
         static let heart = "heart"
         static let square = "square.and.arrow.up"
+        static let blackMacUrl = "https://re-store.ru/catalog/MFMBPRO1621BLK/"
+        static let clockUrl = "https://re-store.ru/catalog/MJ4V3ZM-A/"
+        static let orangeMacUrl = "https://re-store.ru/catalog/MFMBPRO1320OR/"
+        static let airPodsUrl = "https://re-store.ru/catalog/MLWK3/"
+        static let appStoreUrl = "https://re-store.ru"
+        static let URLs = [Constant.blackMacUrl, Constant.clockUrl, Constant.orangeMacUrl, Constant.airPodsUrl]
+        
     }
     
     // MARK: - Visual Components
-    
     private let boxImageView: UIImageView = {
         let image = UIImageView(image: UIImage(systemName: Constant.boxSystemName))
+        image.tintColor = .tertiaryLabel
         return image
     }()
     
@@ -122,7 +129,7 @@ final class InfoViewController: UIViewController {
         return button
     }()
     
-    private lazy var imageScrollView: UIScrollView = {
+    lazy var imageScrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.contentSize = CGSize(width: Int(view.bounds.width) * self.count, height: 240)
         scroll.isPagingEnabled = true
@@ -167,8 +174,12 @@ final class InfoViewController: UIViewController {
         return text
     }()
     
-    // MARK: - Public Properties
+    private let pdfButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
     
+    // MARK: - Public Properties
     var count = Int()
     
     override func viewDidLoad() {
@@ -179,7 +190,6 @@ final class InfoViewController: UIViewController {
     }
     
     // MARK: - Private Method
-    
     private func createUI() {
         view.backgroundColor = .black
         
@@ -241,17 +251,32 @@ final class InfoViewController: UIViewController {
         boxImageView.frame = CGRect(x: 30, y: 740, width: 20, height: 20)
         view.addSubview(boxImageView)
         
+        pdfButton.frame = CGRect(x: 50, y: 740, width: 370, height: 40)
+        view.addSubview(pdfButton)
+        
         navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     private func actions() {
         
-        blackButton.addTarget(self, action: #selector(chouseColorAction(sender: )), for: .touchUpInside)
+        blackButton.addTarget(self,
+                              action: #selector(chouseColorAction(sender: )),
+                              for: .touchUpInside)
         
-        whiteButton.addTarget(self, action: #selector(chouseColorAction(sender: )), for: .touchUpInside)
+        whiteButton.addTarget(self,
+                              action: #selector(chouseColorAction(sender: )),
+                              for: .touchUpInside)
+        
+        imageScrollView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                    action: #selector(imageScrollViewAction(sender: ))))
+        
+        pdfButton.addTarget(self,
+                            action: #selector(pdfButtonAction(sender: )),
+                            for: .touchUpInside)
     }
     
     private func addItems() {
+        
         navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(systemName: Constant.heart),
                                                               style: .done,
                                                               target: self,
@@ -260,6 +285,15 @@ final class InfoViewController: UIViewController {
                                                               style: .done,
                                                               target: self,
                                                               action: nil)]
+    }
+    
+    @objc private func imageScrollViewAction(sender: UIScrollView) {
+        
+        let wkController = WKWebViewController()
+        wkController.url = Constant.URLs[imageScrollView.tag]
+        
+        navigationController?.modalPresentationStyle = .pageSheet
+        present(wkController, animated: true)
     }
     
     @objc private func chouseColorAction(sender: UIButton) {
@@ -273,5 +307,12 @@ final class InfoViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    @objc private func pdfButtonAction(sender: UIButton) {
+        
+        let pdfController = PdfViewController()
+        navigationController?.modalPresentationStyle = .formSheet
+        present(pdfController, animated: true)
     }
 }

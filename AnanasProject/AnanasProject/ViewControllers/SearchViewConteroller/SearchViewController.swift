@@ -32,7 +32,6 @@ final class SearchViewController: UIViewController {
     }
     
     // MARK: - Visual Components
-    
     private let historyLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.history

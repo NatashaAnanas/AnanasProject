@@ -17,18 +17,17 @@ final class BaseTabBarController: UITabBarController {
             createViewController(viewController: BuyViewController(),
                                  titel: "КУПИТЬ",
                                  image: "laptopcomputer.and.iphone"),
-            createViewController(viewController: ForYouViewController(),
+            createViewController(viewController: LoadingViewController(),
                                  titel: "ДЛЯ ВАС", image: "person.circle"),
             createViewController(viewController: SearchViewController(),
                                  titel: "ПОИСК", image: "magnifyingglass"),
-            createViewController(viewController: BagViewControllerThree(),
+            createViewController(viewController: BagViewController(),
                                  titel: "КОРЗИНА",
                                  image: "bag")
         ]
     }
     
     // MARK: - Private Method
-    
     private func createViewController(viewController: UIViewController,
                                       titel: String,
                                       image: String) -> UIViewController {
