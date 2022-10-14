@@ -7,7 +7,7 @@
 
 import UIKit
 /// Загрузк страницы
-class LoadingViewController: UIViewController {
+final class LoadingViewController: UIViewController {
     
     // MARK: - Constant
     
