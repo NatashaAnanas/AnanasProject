@@ -4,13 +4,13 @@
 //
 //  Created by Анастасия Козлова on 13.10.2022.
 //
-
 import UIKit
+
 /// Onboarding контроллер
 final class OnboardingViewController: UIViewController {
     
     // MARK: - Visual Components
-    private let backgroundImage: UIImageView = {
+    private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         return imageView
@@ -41,7 +41,7 @@ final class OnboardingViewController: UIViewController {
         self.myText = text
         self.firstLabel.text = self.myText
         self.secondLabel.text = info
-        self.backgroundImage.image = UIImage(named: image)
+        self.backgroundImageView.image = UIImage(named: image)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -68,16 +68,16 @@ final class OnboardingViewController: UIViewController {
     // MARK: - Private Methods
     private func createUI() {
         
-        backgroundImage.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-        view.addSubview(backgroundImage)
+        backgroundImageView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        view.addSubview(backgroundImageView)
         
         firstLabel.frame = CGRect(x: 0, y: 580, width: 300, height: 80)
         firstLabel.center.x = view.center.x
-        backgroundImage.addSubview(firstLabel)
+        backgroundImageView.addSubview(firstLabel)
         
         secondLabel.frame = CGRect(x: 0, y: 650, width: 350, height: 80)
         secondLabel.center.x = view.center.x
-        backgroundImage.addSubview(secondLabel)
+        backgroundImageView.addSubview(secondLabel)
     }
     
     private func newSettings() {

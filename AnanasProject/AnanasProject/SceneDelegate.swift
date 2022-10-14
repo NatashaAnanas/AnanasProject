@@ -4,10 +4,14 @@
 //
 //  Created by Анастасия Козлова on 05.10.2022.
 //
-
 import UIKit
+
 /// SceneDelegate
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    private enum Constant {
+        static let userDefaultsKey = "new"
+    }
     
     var window: UIWindow?
     
@@ -21,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let userDefaults = UserDefaults.standard
         
-        if userDefaults.object(forKey: "new") != nil {
+        if userDefaults.object(forKey: Constant.userDefaultsKey) != nil {
             let tabBarVC = BaseTabBarController()
             self.window?.rootViewController = tabBarVC
         } else {

@@ -5,6 +5,7 @@
 //  Created by Анастасия Козлова on 05.10.2022.
 //
 import UIKit
+
 /// Контроллер с разделом "Корзина"
 final class BagViewController: UIViewController {
     

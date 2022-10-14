@@ -4,10 +4,21 @@
 //
 //  Created by Анастасия Козлова on 05.10.2022.
 //
-
 import UIKit
+
 /// Базовый TabBarController
 final class BaseTabBarController: UITabBarController {
+    
+    private enum Constant {
+        static let buyTitel = "КУПИТЬ"
+        static let forYouTitel = "ДЛЯ ВАС"
+        static let searchTitel = "ПОИСК"
+        static let bagTitel = "КОРЗИНА"
+        static let iphoneName = "laptopcomputer.and.iphone"
+        static let personName = "person.circle"
+        static let magnifyingglassName = "magnifyingglass"
+        static let bagName = "bag"
+    }
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -15,15 +26,15 @@ final class BaseTabBarController: UITabBarController {
         
         viewControllers = [
             createViewController(viewController: BuyViewController(),
-                                 titel: "КУПИТЬ",
-                                 image: "laptopcomputer.and.iphone"),
+                                 titel: Constant.buyTitel,
+                                 image: Constant.iphoneName),
             createViewController(viewController: LoadingViewController(),
-                                 titel: "ДЛЯ ВАС", image: "person.circle"),
+                                 titel: Constant.forYouTitel, image: Constant.personName),
             createViewController(viewController: SearchViewController(),
-                                 titel: "ПОИСК", image: "magnifyingglass"),
+                                 titel: Constant.searchTitel, image: Constant.magnifyingglassName),
             createViewController(viewController: BagViewController(),
-                                 titel: "КОРЗИНА",
-                                 image: "bag")
+                                 titel: Constant.bagTitel,
+                                 image: Constant.bagName)
         ]
     }
     

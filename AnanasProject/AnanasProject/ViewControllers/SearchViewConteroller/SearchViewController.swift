@@ -4,8 +4,8 @@
 //
 //  Created by Анастасия Козлова on 05.10.2022.
 //
-
 import UIKit
+
 /// Контроллер Поиск
 final class SearchViewController: UIViewController {
     

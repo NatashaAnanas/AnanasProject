@@ -26,7 +26,6 @@
 		4187A92728F2F08D0025AC55 /* clock2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A92628F2F08D0025AC55 /* clock2.png */; };
 		4187A92928F2FD560025AC55 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A92828F2FD560025AC55 /* UILabel+Extension.swift */; };
 		4187A93128F346060025AC55 /* yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 4187A93028F346060025AC55 /* yes.png */; };
-		4187A99428F8AF050025AC55 /* ForYouViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A99328F8AF050025AC55 /* ForYouViewController+Extension.swift */; };
 		4187A99828F8B2310025AC55 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A99728F8B2310025AC55 /* LoadingViewController.swift */; };
 		4187A99A28F8B3960025AC55 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A99928F8B3960025AC55 /* PdfViewController.swift */; };
 		4187A99C28F8B3C10025AC55 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187A99B28F8B3C10025AC55 /* WKWebViewController.swift */; };
@@ -65,7 +64,6 @@
 		4187A92628F2F08D0025AC55 /* clock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock2.png; path = ../../../images/clock2.png; sourceTree = "<group>"; };
 		4187A92828F2FD560025AC55 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		4187A93028F346060025AC55 /* yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yes.png; path = ../../../yes.png; sourceTree = "<group>"; };
-		4187A99328F8AF050025AC55 /* ForYouViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForYouViewController+Extension.swift"; sourceTree = "<group>"; };
 		4187A99728F8B2310025AC55 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		4187A99928F8B3960025AC55 /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
 		4187A99B28F8B3C10025AC55 /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 			children = (
 				41B01B1728EF6C1900929E3A /* SearchViewController+Extension.swift */,
 				4187A92828F2FD560025AC55 /* UILabel+Extension.swift */,
-				4187A99328F8AF050025AC55 /* ForYouViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -309,7 +306,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4187A99A28F8B3960025AC55 /* PdfViewController.swift in Sources */,
-				4187A99428F8AF050025AC55 /* ForYouViewController+Extension.swift in Sources */,
 				4179EEEE28EE0123000D5121 /* BaseTabBarController.swift in Sources */,
 				41B01B1828EF6C1900929E3A /* SearchViewController+Extension.swift in Sources */,
 				4179EEF028EE03F8000D5121 /* ForYouViewController.swift in Sources */,

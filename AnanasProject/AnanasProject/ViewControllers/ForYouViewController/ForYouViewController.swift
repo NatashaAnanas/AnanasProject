@@ -4,8 +4,8 @@
 //
 //  Created by Анастасия Козлова on 05.10.2022.
 //
-
 import UIKit
+
 /// Контроллер с разделом "Для вас"
 final class ForYouViewController: UIViewController {
     
@@ -25,6 +25,7 @@ final class ForYouViewController: UIViewController {
         static let appBage = "app.badge"
         static let iconName = "иконка"
         static let air = "air1"
+        static let forYou = "Для вас"
         static let userDefaultsAvatarName = "ava"
         static let imageSizeForLargeState: CGFloat = 40
         static let imageRightMargin: CGFloat = 16
@@ -202,8 +203,11 @@ final class ForYouViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        createUI()
+        setUpUI()
+        createLabels()
+        setUpFrame()
         setupUI()
+        createScrollView()
         settingsView()
         loadFromUserDefaults()
     }
@@ -218,7 +222,7 @@ final class ForYouViewController: UIViewController {
     
     private func settingsView() {
         view.backgroundColor = .white
-        title = "Для вас"
+        title = Constant.forYou
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "",
@@ -227,49 +231,47 @@ final class ForYouViewController: UIViewController {
                                                            action: nil)
     }
     
-    private func createUI() {
-        
-        appBageImageView.frame = CGRect(x: 30, y: 380, width: 35, height: 35)
-        scrollView.addSubview(appBageImageView)
-        
+    private func createScrollView() {
         scrollView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
         view.addSubview(scrollView)
+    }
+    
+    private func createLabels() {
+        newLabel.frame = CGRect(x: 20, y: 20, width: 250, height: 50)
+        recommendedLabel.frame = CGRect(x: 20, y: 310, width: 350, height: 50)
+        getNewsLabel.frame = CGRect(x: 80, y: 360, width: 260, height: 100)
+        getNotificationsLabel.frame = CGRect(x: 80, y: 420, width: 330, height: 100)
+        devicesLabel.frame = CGRect(x: 20, y: 560, width: 300, height: 50)
+        showAllLabel.frame = CGRect(x: 20, y: 575, width: view.bounds.width - 40, height: 30)
+        oderSentLabel.frame = CGRect(x: 100, y: 30, width: 200, height: 20)
+        infoOderLabel.frame = CGRect(x: 100, y: 55, width: 200, height: 20)
+    }
+    
+    private func setUpFrame() {
         
+        appBageImageView.frame = CGRect(x: 30, y: 380, width: 35, height: 35)
         separateView.frame = CGRect(x: 0, y: 110, width: view.bounds.width - 40, height: 1)
-        infoView.addSubview(separateView)
-        
         infoView.frame = CGRect(x: 0, y: 90, width: view.bounds.width - 40, height: 170)
         infoView.center.x = view.center.x
-        scrollView.addSubview(infoView)
-        
-        newLabel.frame = CGRect(x: 20, y: 20, width: 250, height: 50)
-        scrollView.addSubview(newLabel)
-        
-        recommendedLabel.frame = CGRect(x: 20, y: 310, width: 350, height: 50)
-        scrollView.addSubview(recommendedLabel)
-        
-        getNewsLabel.frame = CGRect(x: 80, y: 360, width: 260, height: 100)
-        scrollView.addSubview(getNewsLabel)
-        
-        getNotificationsLabel.frame = CGRect(x: 80, y: 420, width: 330, height: 100)
-        scrollView.addSubview(getNotificationsLabel)
-        
-        devicesLabel.frame = CGRect(x: 20, y: 560, width: 300, height: 50)
-        scrollView.addSubview(devicesLabel)
-        
-        showAllLabel.frame = CGRect(x: 20, y: 575, width: view.bounds.width - 40, height: 30)
-        scrollView.addSubview(showAllLabel)
-        
         airPodsImageView.frame = CGRect(x: 15, y: 10, width: 80, height: 80)
-        infoView.addSubview(airPodsImageView)
-        
-        oderSentLabel.frame = CGRect(x: 100, y: 30, width: 200, height: 20)
-        infoView.addSubview(oderSentLabel)
-        
-        infoOderLabel.frame = CGRect(x: 100, y: 55, width: 200, height: 20)
-        infoView.addSubview(infoOderLabel)
-        
         infoProgressView.frame = CGRect(x: 10, y: 120, width: infoView.bounds.width - 20, height: 40)
+    }
+    
+    private func setUpUI() {
+    
+        scrollView.addSubview(appBageImageView)
+        infoView.addSubview(separateView)
+        infoView.center.x = view.center.x
+        scrollView.addSubview(infoView)
+        scrollView.addSubview(newLabel)
+        scrollView.addSubview(recommendedLabel)
+        scrollView.addSubview(getNewsLabel)
+        scrollView.addSubview(getNotificationsLabel)
+        scrollView.addSubview(devicesLabel)
+        scrollView.addSubview(showAllLabel)
+        infoView.addSubview(airPodsImageView)
+        infoView.addSubview(oderSentLabel)
+        infoView.addSubview(infoOderLabel)
         infoView.addSubview(infoProgressView)
         
         makeRequestOptions(yCoordinateConstant: 520)
@@ -351,4 +353,18 @@ private extension ForYouViewController {
             scrollView.addSubview(separatorView)
         }
     }
+}
+
+extension ForYouViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let image = info[.editedImage] as? UIImage else { return }
+        self.iconImageView.image = image
+        guard let imageData = image.pngData() else { return }
+        saveUserDefaults(image: imageData)
+        dismiss(animated: true)
+    }
+}
+
+extension ForYouViewController: UINavigationControllerDelegate {
 }

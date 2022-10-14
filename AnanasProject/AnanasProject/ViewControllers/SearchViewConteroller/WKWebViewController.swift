@@ -4,10 +4,9 @@
 //
 //  Created by Анастасия Козлова on 11.10.2022.
 //
-
 import UIKit
-
 import WebKit
+
 /// Информация о товаре из сети
 final class WKWebViewController: UIViewController {
     
@@ -34,12 +33,12 @@ final class WKWebViewController: UIViewController {
         return toolBar
     }()
     
-    private lazy var activityViewController = UIActivityViewController(activityItems: ["\(self.url)"],
+    private lazy var activityViewController = UIActivityViewController(activityItems: ["\(self.urlName)"],
                                                                        applicationActivities: nil)
     private var loadingTimer: Timer?
     
     // MARK: - Public Properties
-    var url = String()
+    var urlName = String()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -52,7 +51,7 @@ final class WKWebViewController: UIViewController {
     
     // MARK: - Private Method
     private func getURL() {
-        guard let myURL = URL(string: url) else { return }
+        guard let myURL = URL(string: urlName) else { return }
         let request = URLRequest(url: myURL)
         wkWebView.load(request)
     }

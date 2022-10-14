@@ -4,8 +4,8 @@
 //
 //  Created by Анастасия Козлова on 07.10.2022.
 //
-
 import UIKit
+
 /// Контроллер с разделом "Для вас"
 final class InfoViewController: UIViewController {
     
@@ -290,7 +290,7 @@ final class InfoViewController: UIViewController {
     @objc private func imageScrollViewAction(sender: UIScrollView) {
         
         let wkController = WKWebViewController()
-        wkController.url = Constant.URLs[imageScrollView.tag]
+        wkController.urlName = Constant.URLs[imageScrollView.tag]
         
         navigationController?.modalPresentationStyle = .pageSheet
         present(wkController, animated: true)

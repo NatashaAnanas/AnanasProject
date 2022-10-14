@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 /// Базовый PageViewController
 final class BasePageViewController: UIPageViewController {
     
@@ -156,34 +157,42 @@ extension BasePageViewController: UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
-        guard let viewController = viewController as? OnboardingViewController else { return nil }
+        print("pageViewController before start")
+        guard let viewController = viewController as? OnboardingViewController else {
+            return nil }
         
         guard let index = myControllers.firstIndex(of: viewController), index > 0 else {
+            print("pageViewController before nil")
             return nil
         }
         let before = index - 1
+        print("pageViewController before")
         return myControllers[before]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        
-        guard let viewController = viewController as? OnboardingViewController else { return nil }
+        print("pageViewController after start")
+        guard let viewController = viewController as? OnboardingViewController else {
+            return nil }
         
         guard let index = myControllers.firstIndex(of: viewController), index < (myControllers.count - 1) else {
+            print("pageViewController after nil")
             return nil
         }
         let after = index + 1
+        print("pageViewController after")
         return myControllers[after]
     }
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        myControllers.count
+        print("presentationCount = 3")
+        return myControllers.count
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        0
+        print("presentationIndex = 0")
+        return 0
     }
     
     func pageViewController(_ pageViewController: UIPageViewController,
@@ -195,6 +204,7 @@ extension BasePageViewController: UIPageViewControllerDelegate {
               let currentIndex = myControllers.firstIndex(of: index) else { return }
         pageControl.currentPage = currentIndex
         showButtons(index: currentIndex)
+        print("pageViewController")
     }
 }
 

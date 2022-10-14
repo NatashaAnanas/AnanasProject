@@ -4,9 +4,9 @@
 //
 //  Created by Анастасия Козлова on 12.10.2022.
 //
-
 import UIKit
-/// Загрузк страницы
+
+/// Загрузка страницы
 final class LoadingViewController: UIViewController {
     
     // MARK: - Constant
